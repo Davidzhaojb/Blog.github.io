@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Flutter实战：(2)编写入口文件</title>
+      <link href="/2019/11/14/Flutter%E5%AE%9E%E6%88%98%EF%BC%9A-2-%E7%BC%96%E5%86%99%E5%85%A5%E5%8F%A3%E6%96%87%E4%BB%B6/"/>
+      <url>/2019/11/14/Flutter%E5%AE%9E%E6%88%98%EF%BC%9A-2-%E7%BC%96%E5%86%99%E5%85%A5%E5%8F%A3%E6%96%87%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<h3 id="项目建立"><a href="#项目建立" class="headerlink" title="项目建立"></a>项目建立</h3><pre><code class="dart">flutter create flutter_shop</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> dart </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Flutter </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>V8是怎么跑起来的</title>
       <link href="/2019/11/14/V8%E6%98%AF%E6%80%8E%E4%B9%88%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84/"/>
       <url>/2019/11/14/V8%E6%98%AF%E6%80%8E%E4%B9%88%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84/</url>
@@ -59,7 +84,7 @@
       <link href="/2019/11/14/ionic%E6%89%93%E5%8C%85/"/>
       <url>/2019/11/14/ionic%E6%89%93%E5%8C%85/</url>
       
-        <content type="html"><![CDATA[<h1 id="安卓"><a href="#安卓" class="headerlink" title="安卓"></a><font color=red>安卓</font></h1><p>第一步 编译</p><pre><code class="bash">sudo ionic cordova build android --prod --release</code></pre><p>第二步 生成jsk密钥文件</p><pre><code class="bash">keytool -genkey -v -keystore name-release-key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias my-alias</code></pre><p>第三步<br>h03</p><pre><code class="bash">sudo jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore hongniu-release-key.jks /Users/fullwin/Documents/bocai/H03/H03-mobile/platforms/android/build/outputs/apk/android-release-unsigned.apk my-alias</code></pre><p>TY2</p><pre><code class="bash">sudo jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore taiyang2-release-key.jks /Users/fullwin/Documents/bocai/TY2/TY2-Mobile/platforms/android/build/outputs/apk/android-release-unsigned.apk my-alias</code></pre><p>第四步<br>h03</p><pre><code class="bash">sudo /Users/fullwin/Library/Android/sdk/build-tools/27.0.2/zipalign -v 4 /Users/fullwin/Documents/bocai/H03/H03-mobile/platforms/android/build/outputs/apk/android-release-unsigned.apk  com.kefu.H03_V2.2.09_release.apk</code></pre><p>TY2</p><pre><code class="bash">sudo /Users/fullwin/Library/Android/sdk/build-tools/27.0.2/zipalign -v 4 /Users/fullwin/Documents/bocai/TY2/TY2-Mobile/platforms/android/build/outputs/apk/android-release-unsigned.apk com.kefu.TY2_V1.1.36_release.apk</code></pre><p>第五步<br>h03</p><pre><code class="bash">/Users/fullwin/Library/Android/sdk/build-tools/27.0.2/apksigner verify -v  com.kefu.H03_V2.2.09_release.apk</code></pre><p>TY2</p><pre><code class="bash">/Users/fullwin/Library/Android/sdk/build-tools/27.0.2/apksigner verify -v com.kefu.TY2_V1.1.36_release.apk</code></pre><h1 id="ios"><a href="#ios" class="headerlink" title="ios"></a><font color=red>ios</font></h1><pre><code class="bash">sudo ionic cordova build ios --prod --release</code></pre><h1 id="wap"><a href="#wap" class="headerlink" title="wap"></a><font color=red>wap</font></h1><pre><code class="bash">sudo ionic cordova build browser --prod --release</code></pre><h1 id="pc"><a href="#pc" class="headerlink" title="pc"></a><font color=red>pc</font></h1><pre><code class="bash">npm run clean:aotnpm run clean:distnpm run build:aot:prod</code></pre>]]></content>
+        <content type="html"><![CDATA[<h1 id="安卓"><a href="#安卓" class="headerlink" title="安卓"></a><font color=red>安卓</font></h1><p>第一步 编译</p><pre><code class="bash">sudo ionic cordova build android --prod --release</code></pre><p>第二步 生成jsk密钥文件</p><pre><code class="bash">keytool -genkey -v -keystore name-release-key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias my-alias</code></pre><p>第三步<br>h03</p><pre><code class="bash">sudo jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore hongniu-release-key.jks /Users/fullwin/Documents/bocai/H03/H03-mobile/platforms/android/build/outputs/apk/android-release-unsigned.apk my-alias</code></pre><p>TY2</p><pre><code class="bash">sudo jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore taiyang2-release-key.jks /Users/fullwin/Documents/bocai/TY2/TY2-Mobile/platforms/android/build/outputs/apk/android-release-unsigned.apk my-alias</code></pre><p>XB3</p><pre><code class="bash">sudo jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore xinbao3-release-key.jks /Users/fullwin/Documents/bocai/xinbao3/platforms/android/build/outputs/apk/android-release-unsigned.apk my-alias</code></pre><p>XB5</p><pre><code class="bash">sudo jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore name-release-key.jks /Users/fullwin/Documents/bocai/xinbao5/Mobile/platforms/android/build/outputs/apk/android-release-unsigned.apk my-alias</code></pre><p>第四步<br>h03</p><pre><code class="bash">sudo /Users/fullwin/Library/Android/sdk/build-tools/27.0.2/zipalign -v 4 /Users/fullwin/Documents/bocai/H03/H03-mobile/platforms/android/build/outputs/apk/android-release-unsigned.apk  com.kefu.H03_V2.2.09_release.apk</code></pre><p>TY2</p><pre><code class="bash">sudo /Users/fullwin/Library/Android/sdk/build-tools/27.0.2/zipalign -v 4 /Users/fullwin/Documents/bocai/TY2/TY2-Mobile/platforms/android/build/outputs/apk/android-release-unsigned.apk com.kefu.TY2_V1.1.36_release.apk</code></pre><p>XB3</p><pre><code class="bash">sudo /Users/fullwin/Library/Android/sdk/build-tools/27.0.2/zipalign -v 4 /Users/fullwin/Documents/bocai/xinbao3/platforms/android/build/outputs/apk/android-release-unsigned.apk com.kefu.xinbao3-v0.3.31-release.apk</code></pre><p>XB5</p><pre><code class="bash">sudo /Users/fullwin/Library/Android/sdk/build-tools/27.0.2/zipalign -v 4 /Users/fullwin/Documents/bocai/xinbao5/Mobile/platforms/android/build/outputs/apk/android-release-unsigned.apk xinbao5-v0.5.36.apk</code></pre><p>第五步<br>h03</p><pre><code class="bash">/Users/fullwin/Library/Android/sdk/build-tools/27.0.2/apksigner verify -v  com.kefu.H03_V2.2.09_release.apk</code></pre><p>TY2</p><pre><code class="bash">/Users/fullwin/Library/Android/sdk/build-tools/27.0.2/apksigner verify -v com.kefu.TY2_V1.1.36_release.apk</code></pre><p>XB3</p><pre><code class="bash">apksigner verifyxinbao3-v0.3.31.apk/Users/fullwin/Library/Android/sdk/build-tools/27.0.2/apksigner verify -v /Users/fullwin/Documents/bocai/xinbao3/com.kefu.xinbao3-v0.3.31-release.apk</code></pre><p>XB5</p><pre><code class="bash">/Users/fullwin/Library/Android/sdk/build-tools/27.0.2/apksigner verify -v xinbao5-v0.5.36.apk</code></pre><h1 id="ios"><a href="#ios" class="headerlink" title="ios"></a><font color=red>ios</font></h1><pre><code class="bash">sudo ionic cordova build ios --prod --release</code></pre><h1 id="wap"><a href="#wap" class="headerlink" title="wap"></a><font color=red>wap</font></h1><pre><code class="bash">sudo ionic cordova build browser --prod --release</code></pre><h1 id="pc"><a href="#pc" class="headerlink" title="pc"></a><font color=red>pc</font></h1><pre><code class="bash">npm run clean:aotnpm run clean:distnpm run build:aot:prod</code></pre>]]></content>
       
       
       <categories>
