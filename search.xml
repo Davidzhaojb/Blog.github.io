@@ -4,13 +4,51 @@
   
     
     <entry>
-      <title>优质网站</title>
-      <link href="/2019/11/14/%E4%BC%98%E8%B4%A8%E7%BD%91%E7%AB%99/"/>
-      <url>/2019/11/14/%E4%BC%98%E8%B4%A8%E7%BD%91%E7%AB%99/</url>
+      <title>V8是怎么跑起来的</title>
+      <link href="/2019/11/14/V8%E6%98%AF%E6%80%8E%E4%B9%88%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84/"/>
+      <url>/2019/11/14/V8%E6%98%AF%E6%80%8E%E4%B9%88%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84/</url>
+      
+        <content type="html"><![CDATA[<h3 id="为什么是V8"><a href="#为什么是V8" class="headerlink" title="为什么是V8"></a>为什么是V8</h3><p>一个前端界的著名定律，叫做==Atwoods Law==</p><blockquote><p>所有可以用javascript编写的程序，最终都会用javascript编写</p></blockquote><h3 id="关于V8的知识点"><a href="#关于V8的知识点" class="headerlink" title="关于V8的知识点"></a>关于V8的知识点</h3><p>V8是使用C++编写的高性能JavaScript和WebAssembly引擎<br><strong>V8的发布周期</strong></p><ul><li>大约每隔六周，就会有一个新的V8版本推出</li><li>V8版本与chrom版本对应，比如V8 v7.8对应Chrom 78</li></ul><p><strong>V8的重要部件</strong></p><ul><li>Ignition(基线编译器)</li><li>TurboFan(优化编译器)</li><li>Orinoco(垃圾回收器)</li><li>Liftoff(WebAssembly 基线编译器)</li></ul><h3 id="V8-的-JavaScript-执行管道"><a href="#V8-的-JavaScript-执行管道" class="headerlink" title="V8 的 JavaScript 执行管道"></a>V8 的 JavaScript 执行管道</h3><ul><li><p>解析器将JavaScript源代码转换成AST，基线编译器将AST编译为字节码，当代码满足一定条件时，将被优化编译器重新编译生成优化的字节码</p></li><li><p>这里不得不提一下分层思想，在执行管道改进的过程中，通过引入IR(intermediate representation，中间表示)，有效的提升了系统可扩展性，降低了关联模块的就合度以及系统的复杂度</p></li><li><p>举个例子，有 A、B、C 三个特性需要迁移到两个处理器平台。在引入 IR 之前，需要有 3 * 2 = 6 种代码实现，在引入 IR 之后，需要 3 + 2 = 5 种代码实现。可以看出，一个是乘法的关系，一个是加法的关系。当需要实现很多特性并适配多种处理器架构时，引入 IR 的优势便大大增加了</p></li></ul><h3 id="解析器与AST"><a href="#解析器与AST" class="headerlink" title="解析器与AST"></a>解析器与AST</h3><ul><li><p>解析代码需要时间，所以JavaScript引擎会尽可能避免完全解析代码源文件。另一方面，再一次用户访问中，页面中会有很多代码不被执行到，比如，通过用户交互触发的行为</p></li><li><p>正因为如此，所有主流浏览器都实现了惰性解析(lazy parsing<br>)，解析器不必为每个函数生成AST(Abstract Syntax tree，抽象语法树)，而是可以决定”预解析“或者”完全解析“</p></li><li><p>预解析会检查源代码的语法并抛出语法错误，但不会解析函数中变量的作用域或生成 AST。完全解析则将分析函数体并生成源代码对应的 AST 数据结构。相比正常解析，预解析的速度快了 2 倍。</p></li><li><p>生成 AST 主要经过两个阶段：分词和语义分析。AST 旨在通过一种结构化的树形数据结构来描述源代码的具体语法组成，常用于语法检查（静态代码分析）、代码混淆、代码优化等</p></li></ul><h3 id="基线编译器-Ignition-与字节码"><a href="#基线编译器-Ignition-与字节码" class="headerlink" title="基线编译器 Ignition 与字节码"></a>基线编译器 Ignition 与字节码</h3><blockquote><p>V8引入JIT(Just In Time，即时编译)技术，通过Ignition基线编译器快速生成字节码进行执行</p></blockquote><h3 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h3><blockquote><p>当内存不再需要的时候，会被周期性运行的垃圾回收器回收。</p></blockquote><blockquote><p>任何垃圾回收期都有一些必须顶起完成的基本任务</p></blockquote><ol><li>确定存活/死亡对象</li><li>回收/再利用死亡对象所占用的内存</li><li>压缩/整理内存(可选)</li></ol><p>V8de 垃圾回收有三个阶段：标记，清楚和整理</p><p><strong>世代假说</strong></p><blockquote><p>时代假说，也成为弱分代假说。这个假说表明，大多数新生的对象在分配之后就会死亡(’用后即焚‘),而老的对象通常倾向于永生。</p></blockquote><p>V8的垃圾回收基于世代假说，将内存分为新生代，老生代。</p><p><img src="http://downloadwebjs.com/20191114/20191114_07.png" alt="image"></p><blockquote><p>如图所示，新生代内部进一步细分为 Nursery 和 Intermediate 子世代（划分只是逻辑上的）。新生对象会被分配到新生代的 Nursery 子世代。若对象在第一次垃圾回收中存活，它的标志位将发生改变，进入逻辑上的 Intermediate 子世代，在物理存储上仍存在于新生代中。如果对象在下一次垃圾回收中再次存活，就会进入老生代。对象从新生代进入到老生代的过程叫做晋升(promotion)</p></blockquote><blockquote><p>V8 在新生代和老生代采用了不同的垃圾回收策略，使垃圾回收更有针对性、更加高效。同时，V8 对新生代和老生代的内存大小也进行了限制</p></blockquote><p><img src="http://downloadwebjs.com/20191114/20191114_08.png" alt="image"><br>需要注意的是，随着内存增大，垃圾回收的次数会减少，但每次所需的时间也会增加，将会对应用的性能和响应能力产生负面影响，因此内存并不是越大越好。</p><h3 id="代码缓存"><a href="#代码缓存" class="headerlink" title="代码缓存"></a>代码缓存</h3><p>在chrom浏览器中，有很多功能或多或少的影响了javascript的执行过程，其中一个功能是代码缓存</p><p>在用户访问相同的页面，并且该页面关联的脚本文件没有任何改动的情况下，代码缓存技术会让 JavaScript 的加载和执行变得更快。<br><img src="http://downloadwebjs.com/20191114/20191114_09.png" alt="image"><br><strong>代码缓存被分为 cold、warm、hot 三个等级。</strong></p><ol><li>用户首次请求 JS 文件时（即 cold run），Chrome 将下载该文件并将其提供给 V8 进行编译，并将该文件缓存到磁盘中。</li><li>当用户第二次请求这个 JS 文件时（即 warm run），Chrome 将从浏览器缓存中获取该文件，并将其再次交给 V8 进行编译。在 warm run 阶段编译完成后，编译的代码会被反序列化，作为元数据附加到缓存的脚本文件中。</li><li>当用户第三次请求这个 JS 文件时（即 hot run），Chrome 从缓存中获取文件和元数据，并将两者交给 V8。V8 将跳过编译阶段，直接反序列化元数据。</li></ol><p><a href="https://juejin.im/post/5dc4d823f265da4d4c202d3b?utm_source=gold_browser_extension" target="_blank" rel="noopener">参考地址</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Chrom </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>个人收藏</title>
+      <link href="/2019/11/14/%E4%B8%AA%E4%BA%BA%E6%94%B6%E8%97%8F/"/>
+      <url>/2019/11/14/%E4%B8%AA%E4%BA%BA%E6%94%B6%E8%97%8F/</url>
       
         <content type="html"><![CDATA[]]></content>
       
       
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>优质网站</title>
+      <link href="/2019/11/14/%E4%BC%98%E8%B4%A8%E7%BD%91%E7%AB%99/"/>
+      <url>/2019/11/14/%E4%BC%98%E8%B4%A8%E7%BD%91%E7%AB%99/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h1><p><a href="https://segmentfault.com/markdown" target="_blank" rel="noopener">Markdown 编辑器语法指南</a><br><a href="https://juejin.im/" target="_blank" rel="noopener">掘金</a><br><a href="https://segmentfault.com/" target="_blank" rel="noopener">思否</a></p><h1 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h1><h1 id="UI-设计"><a href="#UI-设计" class="headerlink" title="UI 设计"></a>UI 设计</h1><h1 id="视频教程"><a href="#视频教程" class="headerlink" title="视频教程"></a>视频教程</h1><h1 id="博客"><a href="#博客" class="headerlink" title="博客"></a>博客</h1><h1 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h1><p><a href="https://segmentfault.com/markdown" target="_blank" rel="noopener">Markdown 编辑器语法指南</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> goodweisite </tag>
+            
+        </tags>
       
     </entry>
     
