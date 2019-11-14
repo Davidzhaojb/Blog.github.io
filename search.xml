@@ -4,6 +4,46 @@
   
     
     <entry>
+      <title>优质网站</title>
+      <link href="/2019/11/14/%E4%BC%98%E8%B4%A8%E7%BD%91%E7%AB%99/"/>
+      <url>/2019/11/14/%E4%BC%98%E8%B4%A8%E7%BD%91%E7%AB%99/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ionic打包</title>
+      <link href="/2019/11/14/ionic%E6%89%93%E5%8C%85/"/>
+      <url>/2019/11/14/ionic%E6%89%93%E5%8C%85/</url>
+      
+        <content type="html"><![CDATA[<h1 id="安卓"><a href="#安卓" class="headerlink" title="安卓"></a><font color=red>安卓</font></h1><p>第一步 编译</p><pre><code class="bash">sudo ionic cordova build android --prod --release</code></pre><p>第二步 生成jsk密钥文件</p><pre><code class="bash">keytool -genkey -v -keystore name-release-key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias my-alias</code></pre><p>第三步<br>h03</p><pre><code class="bash">sudo jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore hongniu-release-key.jks /Users/fullwin/Documents/bocai/H03/H03-mobile/platforms/android/build/outputs/apk/android-release-unsigned.apk my-alias</code></pre><p>TY2</p><pre><code class="bash">sudo jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore taiyang2-release-key.jks /Users/fullwin/Documents/bocai/TY2/TY2-Mobile/platforms/android/build/outputs/apk/android-release-unsigned.apk my-alias</code></pre><p>第四步<br>h03</p><pre><code class="bash">sudo /Users/fullwin/Library/Android/sdk/build-tools/27.0.2/zipalign -v 4 /Users/fullwin/Documents/bocai/H03/H03-mobile/platforms/android/build/outputs/apk/android-release-unsigned.apk  com.kefu.H03_V2.2.09_release.apk</code></pre><p>TY2</p><pre><code class="bash">sudo /Users/fullwin/Library/Android/sdk/build-tools/27.0.2/zipalign -v 4 /Users/fullwin/Documents/bocai/TY2/TY2-Mobile/platforms/android/build/outputs/apk/android-release-unsigned.apk com.kefu.TY2_V1.1.36_release.apk</code></pre><p>第五步<br>h03</p><pre><code class="bash">/Users/fullwin/Library/Android/sdk/build-tools/27.0.2/apksigner verify -v  com.kefu.H03_V2.2.09_release.apk</code></pre><p>TY2</p><pre><code class="bash">/Users/fullwin/Library/Android/sdk/build-tools/27.0.2/apksigner verify -v com.kefu.TY2_V1.1.36_release.apk</code></pre><h1 id="ios"><a href="#ios" class="headerlink" title="ios"></a><font color=red>ios</font></h1><pre><code class="bash">sudo ionic cordova build ios --prod --release</code></pre><h1 id="wap"><a href="#wap" class="headerlink" title="wap"></a><font color=red>wap</font></h1><pre><code class="bash">sudo ionic cordova build browser --prod --release</code></pre><h1 id="pc"><a href="#pc" class="headerlink" title="pc"></a><font color=red>pc</font></h1><pre><code class="bash">npm run clean:aotnpm run clean:distnpm run build:aot:prod</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> technology </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> cordova </tag>
+            
+            <tag> ionic </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hexo 建站、部署、托管</title>
       <link href="/2019/11/14/Hexo%E5%88%9B%E5%BB%BA%E5%B9%B6%E6%89%98%E7%AE%A1github/"/>
       <url>/2019/11/14/Hexo%E5%88%9B%E5%BB%BA%E5%B9%B6%E6%89%98%E7%AE%A1github/</url>
