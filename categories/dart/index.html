@@ -136,7 +136,7 @@
                 
                     <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        270
+                        761
                     </span>
                 
                 
@@ -160,7 +160,16 @@
             
                 <h3 id="项目建立"><a href="#项目建立" class="headerlink" title="项目建立"></a>项目建立</h3><pre><code class="dart">flutter create flutter_shop</code></pre>
 <h3 id="入口文件的编写"><a href="#入口文件的编写" class="headerlink" title="入口文件的编写"></a>入口文件的编写</h3><p>修改main.dart</p>
-<pre><code></code></pre>
+<pre><code class="dart">import &#39;package:flutter/material.dart&#39;;
+
+void main()=&gt;runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(         // 尽量都是用container容器包裹起来
+      child: MaterialApp(
+        title:&#39;百姓生活+&#39;...</code></pre>
             
             <span class="read-more"><a href="/2019/11/14/Flutter%E5%AE%9E%E6%88%98%EF%BC%9A-2-%E7%BC%96%E5%86%99%E5%85%A5%E5%8F%A3%E6%96%87%E4%BB%B6/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
         </div>
