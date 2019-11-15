@@ -164,14 +164,13 @@ doFaRun() {
   this.home.run();
 }</code></pre>
 <h2 id="子组件给子父组件传值"><a href="#子组件给子父组件传值" class="headerlink" title="子组件给子父组件传值"></a>子组件给子父组件传值</h2></li>
-<li>先在子组件中定义一个数据和方法<pre><code class="typescript">public msg: string = &quot;我是子组件的一个msg&quot;;
-</code></pre>
+<li>先在子组件中定义一个数据和方法<pre><code class="typescript">public msg: string = &quot;我是子组件的一个msg&quot;;</code></pre>
+<pre><code class="typescript">run() {
+alert(&quot;我是子组件的一个方法&quot;);
+}</code></pre>
 </li>
-</ul>
-<p>run() {<br>  alert(“我是子组件的一个方法”);<br>}</p>
-<pre><code>- 在父组件html文件中给子组件起一个名字
-```typescript
- &lt;app-footer #footer&gt;&lt;/app-footer&gt;</code></pre><ul>
+<li>在父组件html文件中给子组件起一个名字<pre><code class="typescript">&lt;app-footer #footer&gt;&lt;/app-footer&gt;</code></pre>
+</li>
 <li>在父组件中写两个按钮，并在父组件ts文件中实例化这两个方法<pre><code class="typescript">&lt;button (click)=&quot;getChildMsg()&quot;&gt;
 获取子组件定义的msg
 &lt;/button&gt;
@@ -180,16 +179,11 @@ doFaRun() {
 &lt;button (click)=&quot;doChildRun()&quot;&gt;
 执行子组件定义的方法
 &lt;/button&gt;</code></pre>
-<pre><code class="typescript">//获取子组件定义的msg
-getChildMsg() {
-</code></pre>
+<pre><code class="typescript">getChildMsg() {} //获取子组件定义的msg
+doChildRun() {}  //执行子组件定义的方法</code></pre>
 </li>
-</ul>
-<p>}<br>//执行子组件定义的方法<br>doChildRun() {</p>
-<p>}</p>
-<pre><code>- 在父组件ts文件中引入viewChild
-```typescript
-import { ViewChild } from &#39;@angular/core&#39;;</code></pre><ul>
+<li>在父组件ts文件中引入viewChild<pre><code class="typescript">import { ViewChild } from &#39;@angular/core&#39;;</code></pre>
+</li>
 <li>在父组件html中获取到子组件<pre><code class="typescript">@ViewChild(&quot;footer&quot;) footer: any;</code></pre>
 </li>
 <li>在父组件中调用<pre><code class="typescript">//获取子组件定义的msg，执行子组件中的方法
