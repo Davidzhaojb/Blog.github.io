@@ -5,12 +5,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>David Blog</title>
+    <title>Flutter基础2.Text()组件 - David Blog</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Hexo Nodejs Web,"> 
-    
+    <meta name="description" content="Text()title 文字内容
+Text(&amp;quot;Hello world &amp;quot;*6,  //字符串重复六次
+  textAlign: TextAlign.center,
+)；
+text,"> 
     <meta name="author" content="David"> 
     <link rel="alternative" href="atom.xml" title="David Blog" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -35,29 +39,160 @@
     </div>
     <span id="config-title" style="display:none">David Blog</span>
     <div id="loader"></div>
-    <div id="single" class="page">
-    <div id="top">
-        <a class="iconfont icon-left image-icon" href="javascript:history.back()" target="_blank" rel="noopener"></a>
-    </div>
-    <div class="clone-element"></div>
-    <div class="section dark-obsidian">
-        <div class="article animated fadeIn">
-            <div class="main animated fadeIn">
-                <div class="content animated fadeIn">
-                
-                    <div class="set">
-  <div class="category-mask"></div>
-  <h1>Categories</h1>
-  <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Flutter/">Flutter</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/technology/">technology</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/dart/">dart</a><span class="category-list-count">1</span></li></ul>
-</div>
-
-                
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="/">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">Flutter基础2.Text()组件</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" target="_blank" rel="noopener" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+    <div class="section">
+        <div class= article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(http://domain.com/awesome.jpg);">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                    <a href="/categories/Flutter"><b>「 </b>FLUTTER<b> 」</b></a>
+                
+                November 18, 2019
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2019/11/18/Flutter%E5%9F%BA%E7%A1%802-Text-%E7%BB%84%E4%BB%B6/" title="Flutter基础2.Text()组件" class="">Flutter基础2.Text()组件</a></h3>
+            
+                <p class="post-count animated fadeInDown">
+                    
+                        <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        985
+                    </span>
+                    
+                    
+                        <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        1 mins.
+                    </span>
+                    
+                    
+                        <span id="/2019/11/18/Flutter基础2-Text-组件/" class="leancloud_visitors" data-flag-title="Flutter基础2.Text()组件">
+                            <b class="iconfont icon-read"></b> <i>Read count</i>
+                            <i class="leancloud-visitors-count">1000000</i>
+                        </span>
+                    
+                    
+                </p>
+            
+            
+                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Flutter/" rel="tag">Flutter</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn slower">
+            <h1 id="Text"><a href="#Text" class="headerlink" title="Text()"></a>Text()</h1><p><strong>title 文字内容</strong></p>
+<pre><code class="dart">Text(&quot;Hello world &quot;*6,  //字符串重复六次
+  textAlign: TextAlign.center,
+)；</code></pre>
+<p><strong>textAlign</strong><br>文本的对齐方式；可以选择左对齐、右对齐还是居中。注意，对齐的参考系是Text widget本身。本例中虽然是指定了居中对齐，但因为Text文本内容宽度不足一行，Text的宽度和文本内容长度相等，那么这时指定对齐方式是没有意义的，只有Text宽度大于文本内容长度时指定此属性才有意义。</p>
+<pre><code class="dart">TextAlign.left
+文字对齐方式（left，center，right,start,end）</code></pre>
+<p><strong>maxLine:</strong><br>最大显示行数，是几就显示几行，溢出不显示<br><strong>overflow:</strong></p>
+<pre><code class="dart">TextOverflow.clip 文字溢出截断，不显示
+TextOverflow.ellipsis 溢出显示三个点
+TextOverflow.fade  渐变效果消失</code></pre>
+<p><strong>style</strong></p>
+<pre><code class="dart">TextStyle(
+fontSize:25.0,  //字体大小
+color:Color.fromARGB(a,r,g,b),  //颜色
+height:1.2,
+background:Colors.yellow,
+decoration:TextDecroation.underline,  //下划线
+decorationStyle:TextDecroationStyle.solid  //下划线样式
+) 设置字体样式</code></pre>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
+                <source type="audio/mpeg" src="http://domain.com/awesome.mp3">
+            </audio>
+            
+            
+            
+                <div id="vcomments"></div>
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="/img/icon.jpg" height=300 width=300></img>
+                    <p>David</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                    <dl>
+                        <dd><a href="https://github.com/Davidzhaojb" target="_blank"><span class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="" target="_blank"><span class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="" target="_blank"><span class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">15 <p>Articles</p></a></li>
+                    <li><a href="/categories">3 <p>Categories</p></a></li>
+                    <li><a href="/tags">7 <p>Tags</p></a></li>
+                </ul>
+            </div>
+            
+                
+                
+                    <div class="box sticky animated fadeInRight faster">
+                        <div id="toc" class="subbox">
+                            <h4>Contents</h4>
+                            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Text"><span class="toc-number">1.</span> <span class="toc-text">Text()</span></a></li></ol>
+                        </div>
+                    </div>
+                
+            
+        </div>
+    </div>
+</div>
+
+
+    </div>
+</div>
     <div id="back-to-top" class="animated fadeIn faster">
         <div class="flow"></div>
         <span class="percentage animated fadeIn faster">0%</span>

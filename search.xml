@@ -4,6 +4,181 @@
   
     
     <entry>
+      <title>Flutter基础7.GridView组件</title>
+      <link href="/2019/11/18/Flutter%E5%9F%BA%E7%A1%807-GridView%E7%BB%84%E4%BB%B6/"/>
+      <url>/2019/11/18/Flutter%E5%9F%BA%E7%A1%807-GridView%E7%BB%84%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<h1 id="GridView-网格列表"><a href="#GridView-网格列表" class="headerlink" title="GridView 网格列表"></a>GridView 网格列表</h1><pre><code class="dart">body: GridView.count(    padding:EdgeInsets.all(20.0),    crossAxisSpacing:10.0,  //网格中每个网格的间距    crossAxisCount:3        //一行显示多少列    children:&lt;Widget&gt;[  // children 子元素        Text(&#39;111&#39;),        Text(&#39;222&#39;),        Text(&#39;333&#39;),        Text(&#39;444&#39;),        Text(&#39;444&#39;),        Text(&#39;555&#39;),    ] )</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Flutter </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Flutter </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Flutter基础6.ListView组件</title>
+      <link href="/2019/11/18/Flutter%E5%9F%BA%E7%A1%806-ListView%E7%BB%84%E4%BB%B6/"/>
+      <url>/2019/11/18/Flutter%E5%9F%BA%E7%A1%806-ListView%E7%BB%84%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<h1 id="ListView列表组件"><a href="#ListView列表组件" class="headerlink" title="ListView列表组件"></a>ListView列表组件</h1><pre><code class="dart">body:ListView(    children:&lt;widget&gt;[        ListTile(            leading:Icon(Icons.access_time),            title:Text(&#39;access_time&#39;)        )    ]),</code></pre><p>图片列表跟上面原理类似</p><h1 id="横向列表／纵向列表"><a href="#横向列表／纵向列表" class="headerlink" title="横向列表／纵向列表"></a>横向列表／纵向列表</h1><pre><code class="dart">body:ListView(    scrollDirection: Axis.horizontal, // 水瓶列表    scrollDirection: Axis.vertical    // 纵向列表    children:&lt;widget&gt;[        ListTile(            leading:Icon(Icons.access_time),            title:Text(&#39;access_time&#39;)        )    ]),</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Flutter </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Flutter </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Flutter基础5.Container组件</title>
+      <link href="/2019/11/18/Flutter%E5%9F%BA%E7%A1%805-Container%E7%BB%84%E4%BB%B6/"/>
+      <url>/2019/11/18/Flutter%E5%9F%BA%E7%A1%805-Container%E7%BB%84%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Container"><a href="#Container" class="headerlink" title="Container"></a>Container</h1><p><strong>Alignment</strong> 对齐属性<br>居中对齐</p><pre><code class="dart">Container(    child:Text();    alignement:Alignment.center)</code></pre><p>其他alignement属性</p><ul><li>bottomCenter:下部居中对齐。</li><li>botomLeft: 下部左对齐。</li><li>bottomRight：下部右对齐。</li><li>center：纵横双向居中对齐。</li><li>centerLeft：纵向居中横向居左对齐。</li><li>centerRight：纵向居中横向居右对齐。</li><li>topLeft：顶部左侧对齐。</li><li>topCenter：顶部居中对齐。</li><li>topRight： 顶部居左对齐</li></ul><p><strong>color</strong></p><p><strong>width</strong></p><p><strong>height</strong></p><p><strong>padding</strong><br>设置容器的内边距</p><pre><code class="dart">EdgeInsets.all(10.0) 上下左右全部设置为10EdgeInsets.fromLTRB(0.0,0.0,0.0,0.0); 根据字母顺序设置左上右下的padding</code></pre><p><strong>padding</strong><br>设置容器的外边距，跟padding一样</p><p><strong>decoration</strong><br>设置背景和边框(如果设置了decoration属性，就不要再设置color属性了,会冲突 )</p><pre><code class="dart">decoration:new BoxDecoration(    gradient:const LinearGradient( // 设置渐变      colors:[Colors.lightBlue,Colors.greenAccent,Colors.purple]    ),    border:Border.all(width:2.0,color:Colors.red) // 设置边框样式  ),</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Flutter </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Flutter </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Flutter基础4.Image组件</title>
+      <link href="/2019/11/18/Flutter%E5%9F%BA%E7%A1%804-Image%E7%BB%84%E4%BB%B6/"/>
+      <url>/2019/11/18/Flutter%E5%9F%BA%E7%A1%804-Image%E7%BB%84%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Image"><a href="#Image" class="headerlink" title="Image()"></a>Image()</h1><p>四种引入方式</p><ul><li><p>Image.asset()</p></li><li><p>Image.file()</p></li><li><p>Image.memory()</p></li><li><p>Image.network() 引入网络图片</p></li></ul><p><strong>fit属性，控制图片跟容器的关系</strong><br>Image.network( fit:BoxFot.contain ) 尽量充满容器，但是保持原图尺寸不变</p><p>Image.network( fit:BoxFot.fill ) 填满容器，拉伸图片</p><p>Image.network( fit:BoxFot.fitWidth ) 横向充满，纵向可能裁切</p><p>Image.network( fit:BoxFot.fitHeight ) 纵向充满，横向可能裁切</p><p>Image.network( fit:BoxFot.cover ) 充满整个容器，图片不变形</p><p>Image.network( fit:BoxFot.scalDown ) 保持原图片大小，没什么效果</p><p><strong>colorBlendMode:BlendMode.darken,颜色叠加</strong><br>Image.network( colorBlendMode:BlendMode.darken )</p><p><strong>repeat 图片重复属性</strong></p><pre><code class="dart">repeat(ImageRepeat.noRepeat); 不重复repeat(ImageRepeat.repeat); 重复repeat(ImageRepeat.repeatX); 横向重复repeat(ImageRepeat.repeatY); 纵向重复</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Flutter </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Flutter </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Flutter基础3.按钮组件</title>
+      <link href="/2019/11/18/Flutter%E5%9F%BA%E7%A1%803-%E6%8C%89%E9%92%AE%E7%BB%84%E4%BB%B6/"/>
+      <url>/2019/11/18/Flutter%E5%9F%BA%E7%A1%803-%E6%8C%89%E9%92%AE%E7%BB%84%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Material组件库中的按钮"><a href="#Material组件库中的按钮" class="headerlink" title="Material组件库中的按钮"></a>Material组件库中的按钮</h1><p>Material 组件库中提供了多种按钮组件如RaisedButton、FlatButton、OutlineButton等，它们都是直接或间接对RawMaterialButton组件的包装定制，所以他们大多数属性都和RawMaterialButton一样。在介绍各个按钮时我们先介绍其默认外观，而按钮的外观大都可以通过属性来自定义，我们在后面统一介绍这些属性。另外，所有Material 库中的按钮都有如下相同点：</p><ul><li>按下时都会有“水波动画”（又称“涟漪动画”，就是点击时按钮上会出现水波荡漾的动画）。</li><li>有一个onPressed属性来设置点击回调，当按钮按下时会执行该回调，如果不提供该回调则按钮会处于禁用状态，禁用状态不响应用户点击。</li></ul><ol><li><p>RaisedButton<br>漂浮按钮，默认带有阴影和灰色背景。按下后阴影会变大<br><img src="http://downloadwebjs.com/flutter%E5%9F%BA%E7%A1%80/Snip20191118_1.png" alt="image">;</p><pre><code class="dart">RaisedButton(child: Text(&quot;normal&quot;),onPressed: () {},);</code></pre></li><li><p>FlatButton<br>FlatButton即扁平按钮，默认背景透明并不带阴影。按下后，会有背景色<br><img src="http://downloadwebjs.com/flutter%E5%9F%BA%E7%A1%80/Snip20191118_2.png" alt="image">;</p><pre><code class="dart">FlatButton(child: Text(&quot;normal&quot;),onPressed: () {},)</code></pre></li><li><p>OutlineButton<br>OutlineButton默认有一个边框，不带阴影且背景透明。按下后，边框颜色会变亮、同时出现背景和阴影(较弱)<br><img src="http://downloadwebjs.com/flutter%E5%9F%BA%E7%A1%80/Snip20191118_3.png" alt="image"></p><pre><code class="dart">OutlineButton(child: Text(&quot;normal&quot;),onPressed: () {},)</code></pre></li><li><p>IconButton<br>IconButton是一个可点击的Icon，不包括文字，默认没有背景，点击后会出现背景<br><img src="http://downloadwebjs.com/flutter%E5%9F%BA%E7%A1%80/Snip20191118_4.png" alt="image"></p><pre><code class="dart">IconButton(icon: Icon(Icons.thumb_up),onPressed: () {},)</code></pre></li><li><p>带图标的按钮<br>RaisedButton、FlatButton、OutlineButton都有一个icon 构造函数，通过它可以轻松创建带图标的按钮<br><img src="http://downloadwebjs.com/flutter%E5%9F%BA%E7%A1%80/Snip20191118_5.png" alt="image"></p><pre><code class="dart">RaisedButton.icon(icon: Icon(Icons.send),label: Text(&quot;发送&quot;),onPressed: _onPressed,),OutlineButton.icon(icon: Icon(Icons.add),label: Text(&quot;添加&quot;),onPressed: _onPressed,),FlatButton.icon(icon: Icon(Icons.info),label: Text(&quot;详情&quot;),onPressed: _onPressed,),</code></pre></li><li><p>自定义外观按钮<br>按钮外观可以通过其属性来定义，不同按钮属性大同小异,以FlatButton为例<br><img src="http://downloadwebjs.com/flutter%E5%9F%BA%E7%A1%80/Snip20191118_6.png" alt="image"></p><pre><code class="dart">const FlatButton({...  @required this.onPressed, //按钮点击回调this.textColor, //按钮文字颜色this.disabledTextColor, //按钮禁用时的文字颜色this.color, //按钮背景颜色this.disabledColor,//按钮禁用时的背景颜色this.highlightColor, //按钮按下时的背景颜色this.splashColor, //点击时，水波动画中水波的颜色this.colorBrightness,//按钮主题，默认是浅色主题 this.padding, //按钮的填充this.shape, //外形@required this.child, //按钮的内容})</code></pre></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Flutter </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Flutter </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Flutter基础2.Text()组件</title>
+      <link href="/2019/11/18/Flutter%E5%9F%BA%E7%A1%802-Text-%E7%BB%84%E4%BB%B6/"/>
+      <url>/2019/11/18/Flutter%E5%9F%BA%E7%A1%802-Text-%E7%BB%84%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Text"><a href="#Text" class="headerlink" title="Text()"></a>Text()</h1><p><strong>title 文字内容</strong></p><pre><code class="dart">Text(&quot;Hello world &quot;*6,  //字符串重复六次  textAlign: TextAlign.center,)；</code></pre><p><strong>textAlign</strong><br>文本的对齐方式；可以选择左对齐、右对齐还是居中。注意，对齐的参考系是Text widget本身。本例中虽然是指定了居中对齐，但因为Text文本内容宽度不足一行，Text的宽度和文本内容长度相等，那么这时指定对齐方式是没有意义的，只有Text宽度大于文本内容长度时指定此属性才有意义。</p><pre><code class="dart">TextAlign.left文字对齐方式（left，center，right,start,end）</code></pre><p><strong>maxLine:</strong><br>最大显示行数，是几就显示几行，溢出不显示<br><strong>overflow:</strong></p><pre><code class="dart">TextOverflow.clip 文字溢出截断，不显示TextOverflow.ellipsis 溢出显示三个点TextOverflow.fade  渐变效果消失</code></pre><p><strong>style</strong></p><pre><code class="dart">TextStyle(fontSize:25.0,  //字体大小color:Color.fromARGB(a,r,g,b),  //颜色height:1.2,background:Colors.yellow,decoration:TextDecroation.underline,  //下划线decorationStyle:TextDecroationStyle.solid  //下划线样式) 设置字体样式</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Flutter </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Flutter </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Flutter基础1.Flutter的特性</title>
+      <link href="/2019/11/18/Flutter%E5%9F%BA%E7%A1%801-Flutter%E7%9A%84%E7%89%B9%E6%80%A7/"/>
+      <url>/2019/11/18/Flutter%E5%9F%BA%E7%A1%801-Flutter%E7%9A%84%E7%89%B9%E6%80%A7/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Flutter的特性"><a href="#Flutter的特性" class="headerlink" title="Flutter的特性"></a>Flutter的特性</h3><p><strong>跨平台</strong></p><blockquote><p>Flutter是谷歌新一代跨平台UI框架，除了默认支持Android，ios，经过扩展后还支持pc，web</p></blockquote><p><strong>高性能</strong></p><blockquote><p>界面可达60FPS，渲染效率和用户体验堪比Native</p></blockquote><blockquote><p>FLutter在release下会编译成Native ARM code，使得跨平台的代码运行效率很高</p></blockquote><blockquote><p>Native 和 Flutter 之间是通过 JNI 桥接的，也使得 Native 和 Flutter 之间交互的损耗很低。</p></blockquote><p><strong>丰富的UI组件</strong></p><blockquote><p>Flutter 内置众多精美的 Material Design（Android风格）和 Cupertino（iOS风格）的小部件，而且 UI 样式高度还原 Native 的样式，可以让我们直接使用，而且这些组件都很方便组合，还有丰富的动画库。</p></blockquote><p><strong>学习成本低</strong></p><blockquote><p>Flutter 的学习成本很低，屏蔽了底层的很多实现，可以很快的入手。这也带来一个问题，就是没有办法深入 Flutter 的底层，这也是本教程的目的，除了 Flutter 的使用，也会深入分析 Flutter 的底层实现。</p></blockquote><p><strong>开发效率高</strong></p><blockquote><p>拥有丰富的UI部件，而且支持Hot Reload，同时Flutter使用Dart语言开发，Dart具备很多新的语言特性，可以使得开发速度很快。</p></blockquote><p><strong>和任何平台的交互都很方便</strong></p><p><strong>一次编写，到处运行</strong></p><h3 id="Flutter的四种版本"><a href="#Flutter的四种版本" class="headerlink" title="Flutter的四种版本"></a>Flutter的四种版本</h3><p><strong>master</strong></p><blockquote><p>master 分支上的代码是最新的，所以包含新的特性</p></blockquote><blockquote><p>但是 master 分支上的代码没有经过测试，很可能会出现各种各样的 bug。</p></blockquote><p><strong>dev</strong></p><blockquote><p>Google 工程师会定期将 master 分支的代码滚动到 dev 分支上，在执行滚动的过程中，会对代码进行 Google 的内部测试，所以 dev 渠道是通过测试的最新的构建。但并不意味着 dev 版本不会有 bug，因为这个测试只是最基础的测试，一旦发现有严重的阻塞性的 bug，就会把这个 dev版本列为Bad Builds ，而且这个版本也不会被选为 beta 版本。</p></blockquote><p><strong>beta</strong></p><blockquote><p>beta 渠道的更新频率是一个月，每个月初，Flutter 团队会从前一个月左右的 dev 版本中选取最佳版本作为 beta 版发布，这个版本最起码在 dev 分支上使用一周的时间，且没有新的严重的 bug</p></blockquote><p><strong>stable</strong></p><blockquote><p>stable 渠道的更新频率是一个季度，每个季度发布一次或几次版本，但 stable 的发布频率是不确定的。stable 版本从 beta 分支中选出，只有当 Flutter 团队确定 beta 分支中有一个非常稳定非常好的构建时，而且通常 stable 版本的发布会在对外的公共活动中公布，例如 Flutter Live。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> Flutter </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Flutter </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Angular7父子组件以及父子组件之间的通信 非父子组件之间传值</title>
       <link href="/2019/11/15/Angular7%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BB%A5%E5%8F%8A%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1-%E9%9D%9E%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E4%BC%A0%E5%80%BC/"/>
       <url>/2019/11/15/Angular7%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BB%A5%E5%8F%8A%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1-%E9%9D%9E%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E4%BC%A0%E5%80%BC/</url>
@@ -84,7 +259,7 @@
       <link href="/2019/11/14/%E4%BC%98%E8%B4%A8%E7%BD%91%E7%AB%99/"/>
       <url>/2019/11/14/%E4%BC%98%E8%B4%A8%E7%BD%91%E7%AB%99/</url>
       
-        <content type="html"><![CDATA[<h1 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h1><p><a href="https://segmentfault.com/markdown" target="_blank" rel="noopener">Markdown 编辑器语法指南</a><br><a href="https://juejin.im/" target="_blank" rel="noopener">掘金</a><br><a href="https://segmentfault.com/" target="_blank" rel="noopener">思否</a></p><h1 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h1><h1 id="UI-设计"><a href="#UI-设计" class="headerlink" title="UI 设计"></a>UI 设计</h1><h1 id="视频教程"><a href="#视频教程" class="headerlink" title="视频教程"></a>视频教程</h1><h1 id="博客"><a href="#博客" class="headerlink" title="博客"></a>博客</h1><h1 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h1><p><a href="https://segmentfault.com/markdown" target="_blank" rel="noopener">Markdown 编辑器语法指南</a></p>]]></content>
+        <content type="html"><![CDATA[<p><font color=red>前端</font></p><p><a href="https://juejin.im/" target="_blank" rel="noopener">掘金</a><br><a href="https://segmentfault.com/" target="_blank" rel="noopener">思否</a><br><a href="https://www.bootcss.com/" target="_blank" rel="noopener">bootstrap</a></p><p><font color=red>后端</font></p><p><font color=red>UI 设计</font></p><p><a href="https://www.zcool.com.cn/" target="_blank" rel="noopener">站酷</a><br><a href="https://www.canva.com/" target="_blank" rel="noopener">自定义海报</a><br><a href="https://appicon.co/" target="_blank" rel="noopener">生成appicon</a><br><a href="https://huaban.com/" target="_blank" rel="noopener">花瓣</a><br><a href="https://compressjpeg.com/zh/" target="_blank" rel="noopener">图片压缩</a><br><font color=red>视频教程</font></p><p><font color=red>博客</font></p><p><font color=red>Other</font></p><p><a href="https://segmentfault.com/markdown" target="_blank" rel="noopener">Markdown 编辑器语法指南</a><br><a href="https://msdn.itellyou.cn/" target="_blank" rel="noopener">资源下载</a></p>]]></content>
       
       
       

@@ -5,13 +5,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Hexo 建站、部署、托管 - David Blog</title>
+    <title>Flutter基础1.Flutter的特性 - David Blog</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Hexo Nodejs Web,"> 
-    <meta name="description" content="准备工作安装nodejs(Node.js 版本需不低于 8.6，建议使用 Node.js 10.0 及以上版本.使用低版本node项目会报错)、git
-安装Hexonpm install hexo-,"> 
+    <meta name="description" content="Flutter的特性跨平台
+
+Flutter是谷歌新一代跨平台UI框架，除了默认支持Android，ios，经过扩展后还支持pc，web
+
+高性能
+
+界面可达60FPS，渲染效率和用户体验堪比Nat,"> 
     <meta name="author" content="David"> 
     <link rel="alternative" href="atom.xml" title="David Blog" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -43,7 +48,7 @@
     <div class="navigation animated fadeIn fast delay-1s">
         <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="/">
         <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-        <h3 class="subtitle">Hexo 建站、部署、托管</h3>
+        <h3 class="subtitle">Flutter基础1.Flutter的特性</h3>
         <div class="social">
             <!--        <div class="like-icon">-->
             <!--            <a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -73,17 +78,17 @@
         <div class="else">
             <p class="animated fadeInDown">
                 
-                    <a href="/categories/technology"><b>「 </b>TECHNOLOGY<b> 」</b></a>
+                    <a href="/categories/Flutter"><b>「 </b>FLUTTER<b> 」</b></a>
                 
-                November 14, 2019
+                November 18, 2019
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2019/11/14/Hexo%E5%88%9B%E5%BB%BA%E5%B9%B6%E6%89%98%E7%AE%A1github/" title="Hexo 建站、部署、托管" class="">Hexo 建站、部署、托管</a></h3>
+            <h3 class="post-title animated fadeInDown"><a href="/2019/11/18/Flutter%E5%9F%BA%E7%A1%801-Flutter%E7%9A%84%E7%89%B9%E6%80%A7/" title="Flutter基础1.Flutter的特性" class="">Flutter基础1.Flutter的特性</a></h3>
             
                 <p class="post-count animated fadeInDown">
                     
                         <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        2.6k
+                        2k
                     </span>
                     
                     
@@ -93,7 +98,7 @@
                     </span>
                     
                     
-                        <span id="/2019/11/14/Hexo创建并托管github/" class="leancloud_visitors" data-flag-title="Hexo 建站、部署、托管">
+                        <span id="/2019/11/18/Flutter基础1-Flutter的特性/" class="leancloud_visitors" data-flag-title="Flutter基础1.Flutter的特性">
                             <b class="iconfont icon-read"></b> <i>Read count</i>
                             <i class="leancloud-visitors-count">1000000</i>
                         </span>
@@ -102,7 +107,7 @@
                 </p>
             
             
-                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>
+                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Flutter/" rel="tag">Flutter</a></li></ul>
             
         </div>
     </div>
@@ -123,36 +128,53 @@
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn slower">
-            <h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>安装nodejs(Node.js 版本需不低于 8.6，建议使用 Node.js 10.0 及以上版本.使用低版本node项目会报错)、git</p>
-<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><pre><code class="bash">npm install hexo-cli -g      // 下载hexo cli
-hexo init &lt;项目名称&gt;          // 创建项目
-cd &lt;项目名称&gt;                 // 进入项目
-npm install                 // 下载依赖
-hexo server                 // 运行项目</code></pre>
-<p>执行完上面的步骤，网站已经可以正常运行</p>
-<h3 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h3><p> 以Hexo-theme-obsidian为例，</p>
+            <h3 id="Flutter的特性"><a href="#Flutter的特性" class="headerlink" title="Flutter的特性"></a>Flutter的特性</h3><p><strong>跨平台</strong></p>
 <blockquote>
-<p>参考地址：<a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/README_CN.md" target="_blank" rel="noopener">https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/README_CN.md</a></p>
+<p>Flutter是谷歌新一代跨平台UI框架，除了默认支持Android，ios，经过扩展后还支持pc，web</p>
 </blockquote>
-<p>进入网站的themes目录<br>安装主题</p>
-<pre><code class="bash">git clone https://github.com/TriDiamond/hexo-theme-obsidian.git obsidian</code></pre>
-<p>使用主题<br>打开 Hexo 配置文件 _config.yml, 设置主题为 obsidian</p>
-<pre><code class="bash">...
-theme: obsidian
-...</code></pre>
-<p>主题配置<br>打开 /themes/obsidian/_config.yml 文件可以改变主题配置<br>详细配置文件参考上面的地址</p>
-<h3 id="添加搜索功能"><a href="#添加搜索功能" class="headerlink" title="添加搜索功能"></a>添加搜索功能</h3><p>使用搜索功能<br>安装</p>
-<pre><code class="bach">$ npm install hexo-generator-search --save</code></pre>
-<p>在你的根目录配置 _config.yml 里面添加hexo-generator-search的配置</p>
-<pre><code class="bach">search:
-  path: search.xml
-  field: post
-  content: true</code></pre>
-<p>重新生成静态文件</p>
-<pre><code class="bach">hexo clean &amp;&amp; hexo g</code></pre>
-<h3 id="部署git，并绑定域名"><a href="#部署git，并绑定域名" class="headerlink" title="部署git，并绑定域名"></a>部署git，并绑定域名</h3><p>创建Repositories<br><img src="http://downloadwebjs.com/20191114/20191114_18.png" alt=""><br><img src="http://downloadwebjs.com/20191114/20191114_02.png" alt=""><br>配置根目录下的 _config.yml 配置文件<br><img src="http://downloadwebjs.com/20191114/20191114_03.png" alt=""><br>根目录中添加CNAME文件，内容为你要配置的域名。 注意不要写”http://“，只保留后面的地址<br>选择setting<br><img src="http://downloadwebjs.com/20191114/20191114_04.png" alt=""><br>往下拉，找到GitHub Pages ，点击None，选择master branch<br><img src="http://downloadwebjs.com/20191114/20191114_05.png" alt=""><br>这个时候会出现Custom domain，填入的域名，注意不要写”http://“，Save<br><img src="http://downloadwebjs.com/20191114/20191114_06.png" alt=""></p>
-<h3 id="上传代码"><a href="#上传代码" class="headerlink" title="上传代码"></a>上传代码</h3><p>完成上面的步骤之后，在项目中运行hexo clean &amp; hexo d<br>运行完之后代码会自动提交到git中</p>
-<h3 id="完成绑定"><a href="#完成绑定" class="headerlink" title="完成绑定"></a>完成绑定</h3><p>提交完代码之后打开你的域名，此时可以正常访问</p>
+<p><strong>高性能</strong></p>
+<blockquote>
+<p>界面可达60FPS，渲染效率和用户体验堪比Native</p>
+</blockquote>
+<blockquote>
+<p>FLutter在release下会编译成Native ARM code，使得跨平台的代码运行效率很高</p>
+</blockquote>
+<blockquote>
+<p>Native 和 Flutter 之间是通过 JNI 桥接的，也使得 Native 和 Flutter 之间交互的损耗很低。</p>
+</blockquote>
+<p><strong>丰富的UI组件</strong></p>
+<blockquote>
+<p>Flutter 内置众多精美的 Material Design（Android风格）和 Cupertino（iOS风格）的小部件，而且 UI 样式高度还原 Native 的样式，可以让我们直接使用，而且这些组件都很方便组合，还有丰富的动画库。</p>
+</blockquote>
+<p><strong>学习成本低</strong></p>
+<blockquote>
+<p>Flutter 的学习成本很低，屏蔽了底层的很多实现，可以很快的入手。这也带来一个问题，就是没有办法深入 Flutter 的底层，这也是本教程的目的，除了 Flutter 的使用，也会深入分析 Flutter 的底层实现。</p>
+</blockquote>
+<p><strong>开发效率高</strong></p>
+<blockquote>
+<p>拥有丰富的UI部件，而且支持Hot Reload，同时Flutter使用Dart语言开发，Dart具备很多新的语言特性，可以使得开发速度很快。</p>
+</blockquote>
+<p><strong>和任何平台的交互都很方便</strong></p>
+<p><strong>一次编写，到处运行</strong></p>
+<h3 id="Flutter的四种版本"><a href="#Flutter的四种版本" class="headerlink" title="Flutter的四种版本"></a>Flutter的四种版本</h3><p><strong>master</strong></p>
+<blockquote>
+<p>master 分支上的代码是最新的，所以包含新的特性</p>
+</blockquote>
+<blockquote>
+<p>但是 master 分支上的代码没有经过测试，很可能会出现各种各样的 bug。</p>
+</blockquote>
+<p><strong>dev</strong></p>
+<blockquote>
+<p>Google 工程师会定期将 master 分支的代码滚动到 dev 分支上，在执行滚动的过程中，会对代码进行 Google 的内部测试，所以 dev 渠道是通过测试的最新的构建。但并不意味着 dev 版本不会有 bug，因为这个测试只是最基础的测试，一旦发现有严重的阻塞性的 bug，就会把这个 dev版本列为Bad Builds ，而且这个版本也不会被选为 beta 版本。</p>
+</blockquote>
+<p><strong>beta</strong></p>
+<blockquote>
+<p>beta 渠道的更新频率是一个月，每个月初，Flutter 团队会从前一个月左右的 dev 版本中选取最佳版本作为 beta 版发布，这个版本最起码在 dev 分支上使用一周的时间，且没有新的严重的 bug</p>
+</blockquote>
+<p><strong>stable</strong></p>
+<blockquote>
+<p>stable 渠道的更新频率是一个季度，每个季度发布一次或几次版本，但 stable 的发布频率是不确定的。stable 版本从 beta 分支中选出，只有当 Flutter 团队确定 beta 分支中有一个非常稳定非常好的构建时，而且通常 stable 版本的发布会在对外的公共活动中公布，例如 Flutter Live。</p>
+</blockquote>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
@@ -188,7 +210,7 @@ theme: obsidian
                     <div class="box sticky animated fadeInRight faster">
                         <div id="toc" class="subbox">
                             <h4>Contents</h4>
-                            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#准备工作"><span class="toc-number">1.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Hexo"><span class="toc-number">2.</span> <span class="toc-text">安装Hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更换主题"><span class="toc-number">3.</span> <span class="toc-text">更换主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加搜索功能"><span class="toc-number">4.</span> <span class="toc-text">添加搜索功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#部署git，并绑定域名"><span class="toc-number">5.</span> <span class="toc-text">部署git，并绑定域名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#上传代码"><span class="toc-number">6.</span> <span class="toc-text">上传代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#完成绑定"><span class="toc-number">7.</span> <span class="toc-text">完成绑定</span></a></li></ol>
+                            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Flutter的特性"><span class="toc-number">1.</span> <span class="toc-text">Flutter的特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Flutter的四种版本"><span class="toc-number">2.</span> <span class="toc-text">Flutter的四种版本</span></a></li></ol>
                         </div>
                     </div>
                 

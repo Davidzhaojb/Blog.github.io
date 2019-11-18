@@ -5,13 +5,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Hexo 建站、部署、托管 - David Blog</title>
+    <title>Flutter基础3.按钮组件 - David Blog</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Hexo Nodejs Web,"> 
-    <meta name="description" content="准备工作安装nodejs(Node.js 版本需不低于 8.6，建议使用 Node.js 10.0 及以上版本.使用低版本node项目会报错)、git
-安装Hexonpm install hexo-,"> 
+    <meta name="description" content="Material组件库中的按钮Material 组件库中提供了多种按钮组件如RaisedButton、FlatButton、OutlineButton等，它们都是直接或间接对RawMaterialB,"> 
     <meta name="author" content="David"> 
     <link rel="alternative" href="atom.xml" title="David Blog" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -43,7 +42,7 @@
     <div class="navigation animated fadeIn fast delay-1s">
         <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="/">
         <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-        <h3 class="subtitle">Hexo 建站、部署、托管</h3>
+        <h3 class="subtitle">Flutter基础3.按钮组件</h3>
         <div class="social">
             <!--        <div class="like-icon">-->
             <!--            <a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -73,17 +72,17 @@
         <div class="else">
             <p class="animated fadeInDown">
                 
-                    <a href="/categories/technology"><b>「 </b>TECHNOLOGY<b> 」</b></a>
+                    <a href="/categories/Flutter"><b>「 </b>FLUTTER<b> 」</b></a>
                 
-                November 14, 2019
+                November 18, 2019
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2019/11/14/Hexo%E5%88%9B%E5%BB%BA%E5%B9%B6%E6%89%98%E7%AE%A1github/" title="Hexo 建站、部署、托管" class="">Hexo 建站、部署、托管</a></h3>
+            <h3 class="post-title animated fadeInDown"><a href="/2019/11/18/Flutter%E5%9F%BA%E7%A1%803-%E6%8C%89%E9%92%AE%E7%BB%84%E4%BB%B6/" title="Flutter基础3.按钮组件" class="">Flutter基础3.按钮组件</a></h3>
             
                 <p class="post-count animated fadeInDown">
                     
                         <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        2.6k
+                        2.7k
                     </span>
                     
                     
@@ -93,7 +92,7 @@
                     </span>
                     
                     
-                        <span id="/2019/11/14/Hexo创建并托管github/" class="leancloud_visitors" data-flag-title="Hexo 建站、部署、托管">
+                        <span id="/2019/11/18/Flutter基础3-按钮组件/" class="leancloud_visitors" data-flag-title="Flutter基础3.按钮组件">
                             <b class="iconfont icon-read"></b> <i>Read count</i>
                             <i class="leancloud-visitors-count">1000000</i>
                         </span>
@@ -102,7 +101,7 @@
                 </p>
             
             
-                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>
+                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Flutter/" rel="tag">Flutter</a></li></ul>
             
         </div>
     </div>
@@ -123,36 +122,70 @@
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn slower">
-            <h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>安装nodejs(Node.js 版本需不低于 8.6，建议使用 Node.js 10.0 及以上版本.使用低版本node项目会报错)、git</p>
-<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><pre><code class="bash">npm install hexo-cli -g      // 下载hexo cli
-hexo init &lt;项目名称&gt;          // 创建项目
-cd &lt;项目名称&gt;                 // 进入项目
-npm install                 // 下载依赖
-hexo server                 // 运行项目</code></pre>
-<p>执行完上面的步骤，网站已经可以正常运行</p>
-<h3 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h3><p> 以Hexo-theme-obsidian为例，</p>
-<blockquote>
-<p>参考地址：<a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/README_CN.md" target="_blank" rel="noopener">https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/README_CN.md</a></p>
-</blockquote>
-<p>进入网站的themes目录<br>安装主题</p>
-<pre><code class="bash">git clone https://github.com/TriDiamond/hexo-theme-obsidian.git obsidian</code></pre>
-<p>使用主题<br>打开 Hexo 配置文件 _config.yml, 设置主题为 obsidian</p>
-<pre><code class="bash">...
-theme: obsidian
-...</code></pre>
-<p>主题配置<br>打开 /themes/obsidian/_config.yml 文件可以改变主题配置<br>详细配置文件参考上面的地址</p>
-<h3 id="添加搜索功能"><a href="#添加搜索功能" class="headerlink" title="添加搜索功能"></a>添加搜索功能</h3><p>使用搜索功能<br>安装</p>
-<pre><code class="bach">$ npm install hexo-generator-search --save</code></pre>
-<p>在你的根目录配置 _config.yml 里面添加hexo-generator-search的配置</p>
-<pre><code class="bach">search:
-  path: search.xml
-  field: post
-  content: true</code></pre>
-<p>重新生成静态文件</p>
-<pre><code class="bach">hexo clean &amp;&amp; hexo g</code></pre>
-<h3 id="部署git，并绑定域名"><a href="#部署git，并绑定域名" class="headerlink" title="部署git，并绑定域名"></a>部署git，并绑定域名</h3><p>创建Repositories<br><img src="http://downloadwebjs.com/20191114/20191114_18.png" alt=""><br><img src="http://downloadwebjs.com/20191114/20191114_02.png" alt=""><br>配置根目录下的 _config.yml 配置文件<br><img src="http://downloadwebjs.com/20191114/20191114_03.png" alt=""><br>根目录中添加CNAME文件，内容为你要配置的域名。 注意不要写”http://“，只保留后面的地址<br>选择setting<br><img src="http://downloadwebjs.com/20191114/20191114_04.png" alt=""><br>往下拉，找到GitHub Pages ，点击None，选择master branch<br><img src="http://downloadwebjs.com/20191114/20191114_05.png" alt=""><br>这个时候会出现Custom domain，填入的域名，注意不要写”http://“，Save<br><img src="http://downloadwebjs.com/20191114/20191114_06.png" alt=""></p>
-<h3 id="上传代码"><a href="#上传代码" class="headerlink" title="上传代码"></a>上传代码</h3><p>完成上面的步骤之后，在项目中运行hexo clean &amp; hexo d<br>运行完之后代码会自动提交到git中</p>
-<h3 id="完成绑定"><a href="#完成绑定" class="headerlink" title="完成绑定"></a>完成绑定</h3><p>提交完代码之后打开你的域名，此时可以正常访问</p>
+            <h1 id="Material组件库中的按钮"><a href="#Material组件库中的按钮" class="headerlink" title="Material组件库中的按钮"></a>Material组件库中的按钮</h1><p>Material 组件库中提供了多种按钮组件如RaisedButton、FlatButton、OutlineButton等，它们都是直接或间接对RawMaterialButton组件的包装定制，所以他们大多数属性都和RawMaterialButton一样。在介绍各个按钮时我们先介绍其默认外观，而按钮的外观大都可以通过属性来自定义，我们在后面统一介绍这些属性。另外，所有Material 库中的按钮都有如下相同点：</p>
+<ul>
+<li>按下时都会有“水波动画”（又称“涟漪动画”，就是点击时按钮上会出现水波荡漾的动画）。</li>
+<li>有一个onPressed属性来设置点击回调，当按钮按下时会执行该回调，如果不提供该回调则按钮会处于禁用状态，禁用状态不响应用户点击。</li>
+</ul>
+<ol>
+<li><p>RaisedButton<br>漂浮按钮，默认带有阴影和灰色背景。按下后阴影会变大<br><img src="http://downloadwebjs.com/flutter%E5%9F%BA%E7%A1%80/Snip20191118_1.png" alt="image">;</p>
+<pre><code class="dart">RaisedButton(
+child: Text(&quot;normal&quot;),
+onPressed: () {},
+);</code></pre>
+</li>
+<li><p>FlatButton<br>FlatButton即扁平按钮，默认背景透明并不带阴影。按下后，会有背景色<br><img src="http://downloadwebjs.com/flutter%E5%9F%BA%E7%A1%80/Snip20191118_2.png" alt="image">;</p>
+<pre><code class="dart">FlatButton(
+child: Text(&quot;normal&quot;),
+onPressed: () {},
+)</code></pre>
+</li>
+<li><p>OutlineButton<br>OutlineButton默认有一个边框，不带阴影且背景透明。按下后，边框颜色会变亮、同时出现背景和阴影(较弱)<br><img src="http://downloadwebjs.com/flutter%E5%9F%BA%E7%A1%80/Snip20191118_3.png" alt="image"></p>
+<pre><code class="dart">OutlineButton(
+child: Text(&quot;normal&quot;),
+onPressed: () {},
+)</code></pre>
+</li>
+<li><p>IconButton<br>IconButton是一个可点击的Icon，不包括文字，默认没有背景，点击后会出现背景<br><img src="http://downloadwebjs.com/flutter%E5%9F%BA%E7%A1%80/Snip20191118_4.png" alt="image"></p>
+<pre><code class="dart">IconButton(
+icon: Icon(Icons.thumb_up),
+onPressed: () {},
+)</code></pre>
+</li>
+<li><p>带图标的按钮<br>RaisedButton、FlatButton、OutlineButton都有一个icon 构造函数，通过它可以轻松创建带图标的按钮<br><img src="http://downloadwebjs.com/flutter%E5%9F%BA%E7%A1%80/Snip20191118_5.png" alt="image"></p>
+<pre><code class="dart">RaisedButton.icon(
+icon: Icon(Icons.send),
+label: Text(&quot;发送&quot;),
+onPressed: _onPressed,
+),
+OutlineButton.icon(
+icon: Icon(Icons.add),
+label: Text(&quot;添加&quot;),
+onPressed: _onPressed,
+),
+FlatButton.icon(
+icon: Icon(Icons.info),
+label: Text(&quot;详情&quot;),
+onPressed: _onPressed,
+),</code></pre>
+</li>
+<li><p>自定义外观按钮<br>按钮外观可以通过其属性来定义，不同按钮属性大同小异,以FlatButton为例<br><img src="http://downloadwebjs.com/flutter%E5%9F%BA%E7%A1%80/Snip20191118_6.png" alt="image"></p>
+<pre><code class="dart">const FlatButton({
+...  
+@required this.onPressed, //按钮点击回调
+this.textColor, //按钮文字颜色
+this.disabledTextColor, //按钮禁用时的文字颜色
+this.color, //按钮背景颜色
+this.disabledColor,//按钮禁用时的背景颜色
+this.highlightColor, //按钮按下时的背景颜色
+this.splashColor, //点击时，水波动画中水波的颜色
+this.colorBrightness,//按钮主题，默认是浅色主题 
+this.padding, //按钮的填充
+this.shape, //外形
+@required this.child, //按钮的内容
+})</code></pre>
+</li>
+</ol>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
@@ -188,7 +221,7 @@ theme: obsidian
                     <div class="box sticky animated fadeInRight faster">
                         <div id="toc" class="subbox">
                             <h4>Contents</h4>
-                            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#准备工作"><span class="toc-number">1.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Hexo"><span class="toc-number">2.</span> <span class="toc-text">安装Hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更换主题"><span class="toc-number">3.</span> <span class="toc-text">更换主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加搜索功能"><span class="toc-number">4.</span> <span class="toc-text">添加搜索功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#部署git，并绑定域名"><span class="toc-number">5.</span> <span class="toc-text">部署git，并绑定域名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#上传代码"><span class="toc-number">6.</span> <span class="toc-text">上传代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#完成绑定"><span class="toc-number">7.</span> <span class="toc-text">完成绑定</span></a></li></ol>
+                            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Material组件库中的按钮"><span class="toc-number">1.</span> <span class="toc-text">Material组件库中的按钮</span></a></li></ol>
                         </div>
                     </div>
                 
