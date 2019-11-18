@@ -5,17 +5,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Flutter基础5.Container组件 - David Blog</title>
+    <title>Flutter项目欢迎页制作 - David Blog</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Hexo Nodejs Web,"> 
-    <meta name="description" content="ContainerAlignment 对齐属性居中对齐
-Container(
-    child:Text();
-    alignement:Alignment.center
-)
-其他aligne,"> 
+    <meta name="description" content="欢迎页模板(开箱即用)main.dart
+import &amp;#39;package:flutter/material.dart&amp;#39;;
+import &amp;#39;animation/open_ani,"> 
     <meta name="author" content="David"> 
     <link rel="alternative" href="atom.xml" title="David Blog" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -47,7 +44,7 @@ Container(
     <div class="navigation animated fadeIn fast delay-1s">
         <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="/">
         <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-        <h3 class="subtitle">Flutter基础5.Container组件</h3>
+        <h3 class="subtitle">Flutter项目欢迎页制作</h3>
         <div class="social">
             <!--        <div class="like-icon">-->
             <!--            <a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -81,23 +78,23 @@ Container(
                 
                 November 18, 2019
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2019/11/18/Flutter%E5%9F%BA%E7%A1%805-Container%E7%BB%84%E4%BB%B6/" title="Flutter基础5.Container组件" class="">Flutter基础5.Container组件</a></h3>
+            <h3 class="post-title animated fadeInDown"><a href="/2019/11/18/Flutter%E9%A1%B9%E7%9B%AE%E6%AC%A2%E8%BF%8E%E9%A1%B5%E5%88%B6%E4%BD%9C/" title="Flutter项目欢迎页制作" class="">Flutter项目欢迎页制作</a></h3>
             
                 <p class="post-count animated fadeInDown">
                     
                         <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        1.2k
+                        2.5k
                     </span>
                     
                     
                         <span>
                         <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                        1 mins.
+                        2 mins.
                     </span>
                     
                     
-                        <span id="/2019/11/18/Flutter基础5-Container组件/" class="leancloud_visitors" data-flag-title="Flutter基础5.Container组件">
+                        <span id="/2019/11/18/Flutter项目欢迎页制作/" class="leancloud_visitors" data-flag-title="Flutter项目欢迎页制作">
                             <b class="iconfont icon-read"></b> <i>Read count</i>
                             <i class="leancloud-visitors-count">1000000</i>
                         </span>
@@ -127,37 +124,89 @@ Container(
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn slower">
-            <h1 id="Container"><a href="#Container" class="headerlink" title="Container"></a>Container</h1><p><strong>Alignment</strong> 对齐属性<br>居中对齐</p>
-<pre><code class="dart">Container(
-    child:Text();
-    alignement:Alignment.center
-)</code></pre>
-<p>其他alignement属性</p>
-<ul>
-<li>bottomCenter:下部居中对齐。</li>
-<li>botomLeft: 下部左对齐。</li>
-<li>bottomRight：下部右对齐。</li>
-<li>center：纵横双向居中对齐。</li>
-<li>centerLeft：纵向居中横向居左对齐。</li>
-<li>centerRight：纵向居中横向居右对齐。</li>
-<li>topLeft：顶部左侧对齐。</li>
-<li>topCenter：顶部居中对齐。</li>
-<li>topRight： 顶部居左对齐</li>
-</ul>
-<p><strong>color</strong></p>
-<p><strong>width</strong></p>
-<p><strong>height</strong></p>
-<p><strong>padding</strong><br>设置容器的内边距</p>
-<pre><code class="dart">EdgeInsets.all(10.0) 上下左右全部设置为10
-EdgeInsets.fromLTRB(0.0,0.0,0.0,0.0); 根据字母顺序设置左上右下的padding</code></pre>
-<p><strong>padding</strong><br>设置容器的外边距，跟padding一样</p>
-<p><strong>decoration</strong><br>设置背景和边框(如果设置了decoration属性，就不要再设置color属性了,会冲突 )</p>
-<pre><code class="dart">decoration:new BoxDecoration(
-    gradient:const LinearGradient( // 设置渐变
-      colors:[Colors.lightBlue,Colors.greenAccent,Colors.purple]
-    ),
-    border:Border.all(width:2.0,color:Colors.red) // 设置边框样式
-  ),</code></pre>
+            <h1 id="欢迎页模板-开箱即用"><a href="#欢迎页模板-开箱即用" class="headerlink" title="欢迎页模板(开箱即用)"></a>欢迎页模板(开箱即用)</h1><p><strong>main.dart</strong></p>
+<pre><code class="dart">import &#39;package:flutter/material.dart&#39;;
+import &#39;animation/open_animation.dart&#39;;
+void main() =&gt; runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: MaterialApp(
+        title: &#39;Google Translate&#39;,
+        theme: ThemeData(    // 主题色
+          primaryColor: Colors.blue[600],
+          primarySwatch: Colors.blue,
+        ),
+        home: OpenAnimation(),
+      ),
+    );
+  }
+}</code></pre>
+<p><strong>open_animation.dart</strong></p>
+<pre><code class="dart">import &#39;package:flutter/material.dart&#39;;
+import &#39;../pages/index_page.dart&#39;;
+
+class OpenAnimation extends StatefulWidget {
+  @override
+  _OpenAnimationState createState() =&gt; _OpenAnimationState();
+}
+
+class _OpenAnimationState extends State&lt;OpenAnimation&gt;
+    with SingleTickerProviderStateMixin {
+  AnimationController _controller; // 动画控制器
+  Animation _animation; // 动画
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      duration: Duration(
+        seconds: 3,
+      ),
+      vsync: this, // 正常情况下这里会报错，上面要继承 with SingleTickerProviderStateMixin
+    );
+    _animation = Tween(begin: 0, end: 1).animate(_controller);
+    _animation.addStatusListener((status) {
+      if (status == AnimationStatus.completed) {
+        Navigator.of(context).pushAndRemoveUntil(
+            // pushAndRemoveUntil打开并删除，不删除会很耗内存
+            MaterialPageRoute(builder: (context) {
+          return Indexpage();
+        }), (route) =&gt; route == null);
+      }
+    }); // 监听
+    _controller.forward();     // 播放
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: FadeTransition(
+        opacity: _animation,
+        child: Image.network(&#39;http://downloadwebjs.com/flutter_youdao/splash.png&#39;,fit: BoxFit.cover,),
+      ),
+    );
+  }
+}</code></pre>
+<p><strong>index_page.dart</strong></p>
+<pre><code class="dart">import &#39;package:flutter/material.dart&#39;;
+class Indexpage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(&#39;Google Translate&#39;),
+        ),
+        body: Center(
+          child: Text(&#39;这是首页&#39;),
+        ),
+      ),
+    );
+  }
+}</code></pre>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
@@ -193,7 +242,7 @@ EdgeInsets.fromLTRB(0.0,0.0,0.0,0.0); 根据字母顺序设置左上右下的pad
                     <div class="box sticky animated fadeInRight faster">
                         <div id="toc" class="subbox">
                             <h4>Contents</h4>
-                            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Container"><span class="toc-number">1.</span> <span class="toc-text">Container</span></a></li></ol>
+                            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#欢迎页模板-开箱即用"><span class="toc-number">1.</span> <span class="toc-text">欢迎页模板(开箱即用)</span></a></li></ol>
                         </div>
                     </div>
                 
