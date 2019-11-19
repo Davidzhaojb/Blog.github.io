@@ -5,15 +5,19 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Angular7父子组件以及父子组件之间的通信 非父子组件之间传值 - David Blog</title>
+    <title>centos+docker+mysql - David Blog</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Hexo Nodejs Web,"> 
-    <meta name="description" content="父组件给子组件传值 @input
-先在父组件ts中定义一个属性public title: string = &amp;#39;我是首页组件的标题&amp;#39;;
-
-在父组件html页面元素中绑定属性&amp;lt;ap,"> 
+    <meta name="description" content="安装docker
+yum install docker
+启动docker
+service docker start 
+下载镜像
+docker pull mysql
+启动&amp;amp;配置mysql
+启动,"> 
     <meta name="author" content="David"> 
     <link rel="alternative" href="atom.xml" title="David Blog" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -45,7 +49,7 @@
     <div class="navigation animated fadeIn fast delay-1s">
         <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="/">
         <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-        <h3 class="subtitle">Angular7父子组件以及父子组件之间的通信 非父子组件之间传值</h3>
+        <h3 class="subtitle">centos+docker+mysql</h3>
         <div class="social">
             <!--        <div class="like-icon">-->
             <!--            <a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -70,32 +74,32 @@
             animation-duration: 1.2s;
             background-image: 
                 radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
-                url(/img/cover.jpg);">
+                url(http://domain.com/awesome.jpg);">
         </div>
         <div class="else">
             <p class="animated fadeInDown">
                 
-                    <a href="javascript:;" target="_blank" rel="noopener"><b>「 </b>Article<b> 」</b></a>
+                    <a href="/categories/preliminary"><b>「 </b>PRELIMINARY<b> 」</b></a>
                 
-                November 15, 2019
+                November 19, 2019
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2019/11/15/Angular7%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BB%A5%E5%8F%8A%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1-%E9%9D%9E%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E4%BC%A0%E5%80%BC/" title="Angular7父子组件以及父子组件之间的通信 非父子组件之间传值" class="">Angular7父子组件以及父子组件之间的通信 非父子组件之间传值</a></h3>
+            <h3 class="post-title animated fadeInDown"><a href="/2019/11/19/centos-docker-mysql/" title="centos+docker+mysql" class="">centos+docker+mysql</a></h3>
             
                 <p class="post-count animated fadeInDown">
                     
                         <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        3.7k
+                        1.5k
                     </span>
                     
                     
                         <span>
                         <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                        3 mins.
+                        1 mins.
                     </span>
                     
                     
-                        <span id="/2019/11/15/Angular7父子组件以及父子组件之间的通信-非父子组件之间传值/" class="leancloud_visitors" data-flag-title="Angular7父子组件以及父子组件之间的通信 非父子组件之间传值">
+                        <span id="/2019/11/19/centos-docker-mysql/" class="leancloud_visitors" data-flag-title="centos+docker+mysql">
                             <b class="iconfont icon-read"></b> <i>Read count</i>
                             <i class="leancloud-visitors-count">1000000</i>
                         </span>
@@ -104,7 +108,7 @@
                 </p>
             
             
-                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Angular/" rel="tag">Angular</a></li></ul>
+                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/centos/" rel="tag">centos</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/mysql/" rel="tag">mysql</a></li></ul>
             
         </div>
     </div>
@@ -125,101 +129,31 @@
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn slower">
-            <h2 id="父组件给子组件传值-input"><a href="#父组件给子组件传值-input" class="headerlink" title="父组件给子组件传值 @input"></a>父组件给子组件传值 @input</h2><ul>
-<li>先在父组件ts中定义一个属性<pre><code class="typescript">public title: string = &#39;我是首页组件的标题&#39;;</code></pre>
-</li>
-<li>在父组件html页面元素中绑定属性<pre><code class="typescript">&lt;app-header [title]=&quot;title&quot;&gt;&lt;/app-header&gt;</code></pre>
-</li>
-<li>在子组件中引入Input<pre><code class="typescript">import { Component, OnInit, Input } from &#39;@angular/core&#39;;</code></pre>
-</li>
-<li>在子组件ts文件中获取父组件传过来的值<pre><code class="typescript">//接受父组件传过来的数据
-@Input() title: any;</code></pre>
-</li>
-<li>在子组件页面元素中绑定父组件传过来的值<pre><code class="typescript">&lt;header&gt;{{title}}&lt;/header&gt;</code></pre>
-</li>
+            <p><strong>安装docker</strong></p>
+<pre><code class="bash">yum install docker</code></pre>
+<p><strong>启动docker</strong></p>
+<pre><code class="bash">service docker start </code></pre>
+<p><strong>下载镜像</strong></p>
+<pre><code class="bash">docker pull mysql</code></pre>
+<p><strong>启动&amp;配置mysql</strong></p>
+<pre><code class="bash">启动命令：sudo docker run --name root -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306 -d mysql</code></pre>
+<p>参数说明</p>
+<ul>
+<li>–name：给新创建的容器命名，此处命名为</li>
+<li>-e：配置信息，此处配置mysql的root用户的登陆密码,实例为123456，自行设置</li>
+<li>-p：端口映射，此处映射主机3306端口到容器pwc-mysql的3306端口</li>
+<li>-d：成功启动容器后输出容器的完整ID，例如上图, 最后一个mysql指的是mysql镜像名字<br><strong>开启服务器的3306端口</strong><br>在服务器后台开启端口</li>
 </ul>
-<h2 id="父组件给子组件传方法"><a href="#父组件给子组件传方法" class="headerlink" title="父组件给子组件传方法"></a>父组件给子组件传方法</h2><ul>
-<li>先在父组件ts文件中定义一个方法<pre><code class="typescript">run() {
-  alert(&#39;我是父组件中的一个方法&#39;);
-}</code></pre>
-</li>
-<li>在子组件html页面中定义一个button<pre><code class="typescript">&lt;button (click)=&quot;doFaRun()&quot;&gt;子组件执行父组件中的方法&lt;/button&gt;</code></pre>
-</li>
-<li>在父组件中绑定方法<pre><code class="typescript">&lt;app-header [run]=&quot;run&quot;&gt;&lt;/app-header&gt;</code></pre>
-</li>
-<li>在子组件接收方法<pre><code class="typescript">@Input() run: any;</code></pre>
-</li>
-<li>在子组件ts文件中实现这个方法<pre><code class="typescript">//执行父组件的方法
-doFaRun() {
-this.run();
-}</code></pre>
-<h2 id="将整个父组件传给子组件"><a href="#将整个父组件传给子组件" class="headerlink" title="将整个父组件传给子组件"></a>将整个父组件传给子组件</h2></li>
-<li>在子组件ts文件中定义home属性<pre><code class="typescript">@Input() home: any;</code></pre>
-</li>
-<li>在父组件html中绑定home<pre><code class="typescript">&lt;app-header [home]=&quot;this&quot;&gt;&lt;/app-header&gt;</code></pre>
-</li>
-<li>在子组件ts文件中调用<pre><code class="typescript"> //执行父组件的方法
-doFaRun() {
-  alert(this.home.msg);
-  this.home.run();
-}</code></pre>
-<h2 id="子组件给子父组件传值"><a href="#子组件给子父组件传值" class="headerlink" title="子组件给子父组件传值"></a>子组件给子父组件传值</h2></li>
-<li>先在子组件中定义一个数据和方法<pre><code class="typescript">public msg: string = &quot;我是子组件的一个msg&quot;;</code></pre>
-<pre><code class="typescript">run() {
-alert(&quot;我是子组件的一个方法&quot;);
-}</code></pre>
-</li>
-<li>在父组件html文件中给子组件起一个名字<pre><code class="typescript">&lt;app-footer #footer&gt;&lt;/app-footer&gt;</code></pre>
-</li>
-<li>在父组件中写两个按钮，并在父组件ts文件中实例化这两个方法<pre><code class="typescript">&lt;button (click)=&quot;getChildMsg()&quot;&gt;
-获取子组件定义的msg
-&lt;/button&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;button (click)=&quot;doChildRun()&quot;&gt;
-执行子组件定义的方法
-&lt;/button&gt;</code></pre>
-<pre><code class="typescript">getChildMsg() {} //获取子组件定义的msg
-doChildRun() {}  //执行子组件定义的方法</code></pre>
-</li>
-<li>在父组件ts文件中引入viewChild<pre><code class="typescript">import { ViewChild } from &#39;@angular/core&#39;;</code></pre>
-</li>
-<li>在父组件html中获取到子组件<pre><code class="typescript">@ViewChild(&quot;footer&quot;) footer: any;</code></pre>
-</li>
-<li>在父组件中调用<pre><code class="typescript">//获取子组件定义的msg，执行子组件中的方法
-getChildMsg() {
-alert(this.footer.msg);
-}</code></pre>
-<pre><code class="typescript">//执行子组件定义的方法
-doChildRun() {
-this.footer.run();
-}</code></pre>
-</li>
-</ul>
-<h2 id="父组件监听子组件发射的事件"><a href="#父组件监听子组件发射的事件" class="headerlink" title="父组件监听子组件发射的事件"></a>父组件监听子组件发射的事件</h2><ul>
-<li>子组件引入outpute<pre><code class="typescript">import { Component, OnInit, Input, Output, EventEmitter } from &#39;@angular/core&#39;;
-@Output() doFilter: EventEmitter&lt;any&gt; = new EventEmitter();</code></pre>
-</li>
-<li>子组件通过方法发射要传递的数据<pre><code class="typescript">Filter(value) {
-  this.doFilter.emit(value);
-}</code></pre>
-</li>
-<li>父组建接收参数<pre><code class="html">&lt;app-base-segment (doFilter)=&quot;getFilter($event)&quot;&gt;&lt;/app-base-segment&gt;</code></pre>
-</li>
-</ul>
+<p><strong>链接mysql报错</strong><br><img src="http://downloadwebjs.com/mysql/Snip20191119_1.png" alt="image">;</p>
+<blockquote>
+<p>解决方法<br>1.进入mysql容器 <code>docker exec -it mysql_o1 bash</code><br>2.连接 <code>mysql mysql -uroot -p</code><br>3.更改加密方式：<br><code>mysql&gt; ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;password&#39; PASSWORD EXPIRE NEVER;</code><br>4.更改密码：（如上面的也不行可以修改下密码）<br><code>mysql&gt; ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED WITH mysql_native_password BY &#39;123456&#39;;</code><br>5.刷新<br><code>mysql&gt; FLUSH PRIVILEGES;</code><br>6.退出控制台</p>
+</blockquote>
+<p><a href="https://juejin.im/post/5c000b455188251b8a2700c6" target="_blank" rel="noopener">参考地址:https://juejin.im/post/5c000b455188251b8a2700c</a>;</p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
-                <source type="audio/mpeg" src="">
+                <source type="audio/mpeg" src="http://domain.com/awesome.mp3">
             </audio>
-            
-                <ul id="audio-list" style="display:none">
-                    
-                        
-                            <li title='0' data-url='/statics/chengdu.mp3'></li>
-                        
-                    
-                </ul>
             
             
             
@@ -246,13 +180,6 @@ this.footer.run();
             </div>
             
                 
-                
-                    <div class="box sticky animated fadeInRight faster">
-                        <div id="toc" class="subbox">
-                            <h4>Contents</h4>
-                            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#父组件给子组件传值-input"><span class="toc-number">1.</span> <span class="toc-text">父组件给子组件传值 @input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#父组件给子组件传方法"><span class="toc-number">2.</span> <span class="toc-text">父组件给子组件传方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将整个父组件传给子组件"><span class="toc-number">3.</span> <span class="toc-text">将整个父组件传给子组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#子组件给子父组件传值"><span class="toc-number">4.</span> <span class="toc-text">子组件给子父组件传值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#父组件监听子组件发射的事件"><span class="toc-number">5.</span> <span class="toc-text">父组件监听子组件发射的事件</span></a></li></ol>
-                        </div>
-                    </div>
                 
             
         </div>

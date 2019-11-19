@@ -5,18 +5,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Flutter基础1.Flutter的特性 - David Blog</title>
+    <title>Category: preliminary - David Blog</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Hexo Nodejs Web,"> 
-    <meta name="description" content="Flutter的特性跨平台
-
-Flutter是谷歌新一代跨平台UI框架，除了默认支持Android，ios，经过扩展后还支持pc，web
-
-高性能
-
-界面可达60FPS，渲染效率和用户体验堪比Nat,"> 
+    
     <meta name="author" content="David"> 
     <link rel="alternative" href="atom.xml" title="David Blog" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -41,76 +35,148 @@ Flutter是谷歌新一代跨平台UI框架，除了默认支持Android，ios，�
     </div>
     <span id="config-title" style="display:none">David Blog</span>
     <div id="loader"></div>
-    <div id="single">
-    <div class="scrollbar gradient-bg-rev"></div>
-<div id="top" style="display: block;">
-    <div class="bar" style="width: 0;"></div>
-    <div class="navigation animated fadeIn fast delay-1s">
-        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="/">
-        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-        <h3 class="subtitle">Flutter基础1.Flutter的特性</h3>
-        <div class="social">
-            <!--        <div class="like-icon">-->
-            <!--            <a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
-            <!--        </div>-->
-            <div>
-                <div class="share">
-                    
-                        <a href="javascript:;" target="_blank" rel="noopener" class="iconfont icon-share1"></a>
-                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class="nav">
+    <ul id="menu-menu" class="menu">
+        
+        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/about/" title="ABOUT" external="false">ABOUT</a>
+        </li>
+        
+        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/categories/" title="CATEGORIES" external="false">CATEGORIES</a>
+        </li>
+        
+        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/tags/" title="TAGS" external="false">TAGS</a>
+        </li>
+        
+        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/archives/" title="ARCHIVES" external="false">ARCHIVES</a>
+        </li>
+        
+    </ul>
+    <p class="copyright" id="copyright">
+        &copy; 2019 David.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+    </p>
 </div>
 
-    <div class="section">
-        <div class= article-header-wrapper>
-    <div class="article-header">
-        <div class="article-cover animated fadeIn" style="
-            animation-delay: 600ms;
-            animation-duration: 1.2s;
-            background-image: 
-                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+<div id="container">
+    
+<div class="search-box">
+    <form class="site-search-form">
+        <span class="iconfont icon-search"></span>
+        <input type="text" id="local-search-input" class="st-search-input" />
+        <div class="iconfont icon-cross search-box-close"></div>
+    </form>
+    <div class="search-scrollable">
+      <div id="local-search-result"
+           class="local-search-result-cls"
+           data-initialise="Initialising search index..."
+           data-start="Please input search keywords."
+           data-empty="No result found, please try other keywords."
+      >
+        <span>Please input search keywords.</span>
+      </div>
+    </div>
+</div>
+<div id="header">
+    <div>
+        <div class="logo animated fadeInDown">
+            <img src="/img/favicon.png" alt="">
+            <a class="image-logo" href="/"></a>
+        </div>
+        <ul id="menu-menu" class="menu text-menu">
+            
+            <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+                <a href="/about/" title="ABOUT" external="false" class="menu-link">ABOUT</a>
+            </li>
+            
+            <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+                <a href="/categories/" title="CATEGORIES" external="false" class="menu-link">CATEGORIES</a>
+            </li>
+            
+            <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+                <a href="/tags/" title="TAGS" external="false" class="menu-link">TAGS</a>
+            </li>
+            
+            <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+                <a href="/archives/" title="ARCHIVES" external="false" class="menu-link">ARCHIVES</a>
+            </li>
+            
+            
+                <li class="animated fadeInDown search-bar iconfont icon-search"></li>
+            
+        </ul>
+        <div class="iconfont icon-menu switchmenu gradient-text animated fadeInDown"></div>
+    </div>
+</div>
+<div id="screen">
+    <div id="mark">
+        <div class="cover animated fadeIn" style="
+            animation-delay: 900ms;
+            animation-duration: 2.8s;
+            background-image:
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.56), #100e17),
                 url(http://domain.com/awesome.jpg);">
         </div>
-        <div class="else">
-            <p class="animated fadeInDown">
-                
-                    <a href="/categories/Flutter"><b>「 </b>FLUTTER<b> 」</b></a>
-                
-                November 18, 2019
-            </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2019/11/18/Flutter%E5%9F%BA%E7%A1%801-Flutter%E7%9A%84%E7%89%B9%E6%80%A7/" title="Flutter基础1.Flutter的特性" class="">Flutter基础1.Flutter的特性</a></h3>
+    </div>
+    
+    <div id="post0" class="else">
+        <p class="animated fadeInDown">
             
-                <p class="post-count animated fadeInDown">
-                    
-                        <span>
+                <a href="/categories/preliminary"><b>「 </b>PRELIMINARY<b> 」</b></a>
+            
+            November 19, 2019
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2019/11/19/centos-docker-mysql/" title="centos+docker+mysql" class="posttitle">centos+docker+mysql</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        2k
+                        1.5k
                     </span>
-                    
-                    
-                        <span>
+                
+                
+                    <span>
                         <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                        2 mins.
+                        1 mins.
                     </span>
-                    
-                    
-                        <span id="/2019/11/18/Flutter基础1-Flutter的特性/" class="leancloud_visitors" data-flag-title="Flutter基础1.Flutter的特性">
-                            <b class="iconfont icon-read"></b> <i>Read count</i>
-                            <i class="leancloud-visitors-count">1000000</i>
-                        </span>
-                    
-                    
-                </p>
+                
+                
+                    <span id="/2019/11/19/centos-docker-mysql/" class="leancloud_visitors" data-flag-title="">
+                        <b class="iconfont icon-read"></b> <i>Read count</i>
+                        <i class="leancloud-visitors-count">1000000</i>
+                    </span>
+                
+            </p>
+        
+        
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/centos/" rel="tag">centos</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/mysql/" rel="tag">mysql</a></li></ul>
+        
+        <div class="md-content animated fadeIn">
             
+                <p><strong>安装docker</strong></p>
+<pre><code class="bash">yum install docker</code></pre>
+<p><strong>启动docker</strong></p>
+<pre><code class="bash">service docker start </code></pre>
+<p><strong>下载镜像</strong></p>
+<pre><code class="bash">docker pull mysql</code></pre>
+<p><strong>启动&amp;配置mysql</strong></p>
+<pre><code class="bash">启动命令：sudo docker run --name root -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306 -d mysql</code></pre>
+<p>参数说明</p>
+<ul>
+<li>–name：给新创建的容器命名，此处命名为</li>
+<li>-e：配置信息，此处配置mysql的root用户的登陆密码,实例为123456，自行设置</li>
+<li>-p：端口映射，此处映射主机3306端口到容器pwc-mysql的3306端口</li>
+<li>-d：成功...</li></ul>
             
-                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Flutter/" rel="tag">Flutter</a></li></ul>
-            
+            <span class="read-more"><a href="/2019/11/19/centos-docker-mysql/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
         </div>
     </div>
+    
 </div>
 
 <div class="screen-gradient-after">
@@ -118,110 +184,20 @@ Flutter是谷歌新一代跨平台UI框架，除了默认支持Android，ios，�
         <div class="screen-gradient-content-inside">
             <div class="bold-underline-links screen-gradient-sponsor">
                 <p>
-                    <span class="animated fadeIn delay-1s"></span>
+                  <span class="typed-text"></span>
                 </p>
             </div>
         </div>
     </div>
 </div>
 
-<div class="article">
-    <div class='main'>
-        <div class="content markdown animated fadeIn slower">
-            <h3 id="Flutter的特性"><a href="#Flutter的特性" class="headerlink" title="Flutter的特性"></a>Flutter的特性</h3><p><strong>跨平台</strong></p>
-<blockquote>
-<p>Flutter是谷歌新一代跨平台UI框架，除了默认支持Android，ios，经过扩展后还支持pc，web</p>
-</blockquote>
-<p><strong>高性能</strong></p>
-<blockquote>
-<p>界面可达60FPS，渲染效率和用户体验堪比Native</p>
-</blockquote>
-<blockquote>
-<p>FLutter在release下会编译成Native ARM code，使得跨平台的代码运行效率很高</p>
-</blockquote>
-<blockquote>
-<p>Native 和 Flutter 之间是通过 JNI 桥接的，也使得 Native 和 Flutter 之间交互的损耗很低。</p>
-</blockquote>
-<p><strong>丰富的UI组件</strong></p>
-<blockquote>
-<p>Flutter 内置众多精美的 Material Design（Android风格）和 Cupertino（iOS风格）的小部件，而且 UI 样式高度还原 Native 的样式，可以让我们直接使用，而且这些组件都很方便组合，还有丰富的动画库。</p>
-</blockquote>
-<p><strong>学习成本低</strong></p>
-<blockquote>
-<p>Flutter 的学习成本很低，屏蔽了底层的很多实现，可以很快的入手。这也带来一个问题，就是没有办法深入 Flutter 的底层，这也是本教程的目的，除了 Flutter 的使用，也会深入分析 Flutter 的底层实现。</p>
-</blockquote>
-<p><strong>开发效率高</strong></p>
-<blockquote>
-<p>拥有丰富的UI部件，而且支持Hot Reload，同时Flutter使用Dart语言开发，Dart具备很多新的语言特性，可以使得开发速度很快。</p>
-</blockquote>
-<p><strong>和任何平台的交互都很方便</strong></p>
-<p><strong>一次编写，到处运行</strong></p>
-<h3 id="Flutter的四种版本"><a href="#Flutter的四种版本" class="headerlink" title="Flutter的四种版本"></a>Flutter的四种版本</h3><p><strong>master</strong></p>
-<blockquote>
-<p>master 分支上的代码是最新的，所以包含新的特性</p>
-</blockquote>
-<blockquote>
-<p>但是 master 分支上的代码没有经过测试，很可能会出现各种各样的 bug。</p>
-</blockquote>
-<p><strong>dev</strong></p>
-<blockquote>
-<p>Google 工程师会定期将 master 分支的代码滚动到 dev 分支上，在执行滚动的过程中，会对代码进行 Google 的内部测试，所以 dev 渠道是通过测试的最新的构建。但并不意味着 dev 版本不会有 bug，因为这个测试只是最基础的测试，一旦发现有严重的阻塞性的 bug，就会把这个 dev版本列为Bad Builds ，而且这个版本也不会被选为 beta 版本。</p>
-</blockquote>
-<p><strong>beta</strong></p>
-<blockquote>
-<p>beta 渠道的更新频率是一个月，每个月初，Flutter 团队会从前一个月左右的 dev 版本中选取最佳版本作为 beta 版发布，这个版本最起码在 dev 分支上使用一周的时间，且没有新的严重的 bug</p>
-</blockquote>
-<p><strong>stable</strong></p>
-<blockquote>
-<p>stable 渠道的更新频率是一个季度，每个季度发布一次或几次版本，但 stable 的发布频率是不确定的。stable 版本从 beta 分支中选出，只有当 Flutter 团队确定 beta 分支中有一个非常稳定非常好的构建时，而且通常 stable 版本的发布会在对外的公共活动中公布，例如 Flutter Live。</p>
-</blockquote>
-
-            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
-            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
-                <source type="audio/mpeg" src="http://domain.com/awesome.mp3">
-            </audio>
-            
-            
-            
-                <div id="vcomments"></div>
-            
-        </div>
-        <div class="sidebar">
-            <div class="box animated fadeInRight">
-                <div class="subbox">
-                    <img src="/img/icon.jpg" height=300 width=300></img>
-                    <p>David</p>
-                    <span>Think like an artist, develop like an artisan</span>
-                    <dl>
-                        <dd><a href="https://github.com/Davidzhaojb" target="_blank"><span class=" iconfont icon-github"></span></a></dd>
-                        <dd><a href="" target="_blank"><span class=" iconfont icon-twitter"></span></a></dd>
-                        <dd><a href="" target="_blank"><span class=" iconfont icon-stack-overflow"></span></a></dd>
-                    </dl>
-                </div>
-                <ul>
-                    <li><a href="/">18 <p>Articles</p></a></li>
-                    <li><a href="/categories">4 <p>Categories</p></a></li>
-                    <li><a href="/tags">10 <p>Tags</p></a></li>
-                </ul>
-            </div>
-            
-                
-                
-                    <div class="box sticky animated fadeInRight faster">
-                        <div id="toc" class="subbox">
-                            <h4>Contents</h4>
-                            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Flutter的特性"><span class="toc-number">1.</span> <span class="toc-text">Flutter的特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Flutter的四种版本"><span class="toc-number">2.</span> <span class="toc-text">Flutter的四种版本</span></a></li></ol>
-                        </div>
-                    </div>
-                
-            
-        </div>
+    <div id="primary">
+        
     </div>
+    
 </div>
+<div id="preview"></div>
 
-
-    </div>
-</div>
     <div id="back-to-top" class="animated fadeIn faster">
         <div class="flow"></div>
         <span class="percentage animated fadeIn faster">0%</span>
