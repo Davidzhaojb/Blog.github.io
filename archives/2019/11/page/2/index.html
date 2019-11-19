@@ -71,12 +71,9 @@ yum install docker
 启动docker
 service docker start 
 下载镜像
-docker pull mysql
+docker pull mysql:5.7
 启动&amp;配置mysql
-启动命令：sudo docker run --name root -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306 -d mysql
-参数说明
-
-–name：给新创...
+启动命令：docker run -p 3306:3306 --name mysqldb -v $PWD/conf:/etc/mysql/conf.d -v $PWD/logs:/logs -v...
                                         </p>
                                     </div>
                                 </li>

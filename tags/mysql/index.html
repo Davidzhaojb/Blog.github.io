@@ -136,7 +136,7 @@
                 
                     <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        1.5k
+                        1.6k
                     </span>
                 
                 
@@ -163,15 +163,13 @@
 <p><strong>启动docker</strong></p>
 <pre><code class="bash">service docker start </code></pre>
 <p><strong>下载镜像</strong></p>
-<pre><code class="bash">docker pull mysql</code></pre>
+<pre><code class="bash">docker pull mysql:5.7</code></pre>
 <p><strong>启动&amp;配置mysql</strong></p>
-<pre><code class="bash">启动命令：sudo docker run --name root -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306 -d mysql</code></pre>
+<pre><code class="bash">启动命令：docker run -p 3306:3306 --name mysqldb -v $PWD/conf:/etc/mysql/conf.d -v $PWD/logs:/logs -v $PWD/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=a123456 -idt mysql:5.7</code></pre>
 <p>参数说明</p>
 <ul>
 <li>–name：给新创建的容器命名，此处命名为</li>
-<li>-e：配置信息，此处配置mysql的root用户的登陆密码,实例为123456，自行设置</li>
-<li>-p：端口映射，此处映射主机3306端口到容器pwc-mysql的3306端口</li>
-<li>-d：成功...</li></ul>
+<li>-e：...</li></ul>
             
             <span class="read-more"><a href="/2019/11/19/centos-docker-mysql/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
         </div>
