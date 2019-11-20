@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>angular7+ionic4+ngx-quill配置</title>
+      <link href="/2019/11/20/angular7-ionic4-ngx-quill%E9%85%8D%E7%BD%AE/"/>
+      <url>/2019/11/20/angular7-ionic4-ngx-quill%E9%85%8D%E7%BD%AE/</url>
+      
+        <content type="html"><![CDATA[<p><strong>下载依赖</strong></p><pre><code class="typescript">npm install ngx-quill --save</code></pre><blockquote><p>对于使用Angular &lt;v5.0.0安装的项目 npm install <a href="mailto:ngx-quill@1.6.0" target="_blank" rel="noopener">ngx-quill@1.6.0</a></p></blockquote><table><thead><tr><th>Angular</th><th>ngx-quill</th><th>supported/maintained</th></tr></thead><tbody><tr><td>v8</td><td>&gt;= 5.2.0</td><td>until Nov 22, 2020</td></tr><tr><td>v7</td><td>&gt;= 4.0.0</td><td>until Apr 18, 2020</td></tr><tr><td>v6</td><td>&gt;= 3.0.0</td><td>until Nov 3, 2019</td></tr><tr><td>v5</td><td>&gt;= 1.6.0</td><td></td></tr><tr><td>v4</td><td>&gt;= 1.6.0</td><td></td></tr></tbody></table><p><strong>global.scss</strong></p><pre><code class="scss">@import &#39;~quill/dist/quill.core.css&#39;;@import &#39;~quill/dist/quill.snow.css&#39;;[contenteditable] {  -webkit-user-select: text;  user-select: text;}</code></pre><p><strong>angular.json</strong></p><pre><code class="json"> &quot;scripts&quot;: [    &quot;./node_modules/quill/dist/quill.min.js&quot;            ]</code></pre><p><strong>home.page.html</strong></p><pre><code class="html">&lt;quill-editor&gt;&lt;/quill-editor&gt;</code></pre><p><strong>home.module.ts</strong></p><pre><code class="typescript">import { IonicModule } from &#39;@ionic/angular&#39;;import { RouterModule } from &#39;@angular/router&#39;;import { NgModule } from &#39;@angular/core&#39;;import { CommonModule } from &#39;@angular/common&#39;;import { FormsModule } from &#39;@angular/forms&#39;;import { HomePage } from &#39;./home.page&#39;;import { ShareModule } from &#39;src/shared/share.module&#39;;import { QuillModule } from &#39;ngx-quill&#39;;@NgModule({    imports: [        IonicModule,        CommonModule,        FormsModule,        ShareModule,        QuillModule.forRoot(),        RouterModule.forChild([{ path: &#39;&#39;, component: HomePage }])    ],    declarations: [HomePage],    providers: []})export class HomePageModule { }</code></pre><blockquote><p><a href="https://www.npmjs.com/package/ngx-quill" target="_blank" rel="noopener">参考地址:https://www.npmjs.com/package/ngx-quill</a><br><a href="">代码地址</a></p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> quill </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ngx-quill </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>centos+docker+mysql</title>
       <link href="/2019/11/19/centos-docker-mysql/"/>
       <url>/2019/11/19/centos-docker-mysql/</url>
