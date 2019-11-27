@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>docker部署mysql</title>
+      <link href="/2019/11/27/docker%E9%83%A8%E7%BD%B2mysql/"/>
+      <url>/2019/11/27/docker%E9%83%A8%E7%BD%B2mysql/</url>
+      
+        <content type="html"><![CDATA[<p><strong>Docker部署mysql</strong></p><ol><li>下载镜像<pre><code class="typescript">docker pull mysql:5.7</code></pre></li><li>运行镜像，挂载数据卷<pre><code class="typescript">docker run -p 3306:3306 --name mysqldb -v $PWD/conf:/etc/mysql/conf.d -v $PWD/logs:/logs -v $PWD/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=a123456 -idt mysql:5.7</code></pre></li><li>默认的用户名密码<br>执行完第二步，数据库就算是已经创建好了。 默认的数据库用户名就是root，密码是a123456。 可以通过数据库的客户端来访问。</li></ol><blockquote><p>注意：服务器的3306端口要开放，可以在后台开放该端口。</p></blockquote>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> docker </tag>
+            
+            <tag> mysql </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>angular7+ionic4+ngx-quill配置</title>
       <link href="/2019/11/20/angular7-ionic4-ngx-quill%E9%85%8D%E7%BD%AE/"/>
       <url>/2019/11/20/angular7-ionic4-ngx-quill%E9%85%8D%E7%BD%AE/</url>
@@ -45,11 +66,11 @@
       
         <tags>
             
-            <tag> centos </tag>
-            
             <tag> docker </tag>
             
             <tag> mysql </tag>
+            
+            <tag> centos </tag>
             
         </tags>
       

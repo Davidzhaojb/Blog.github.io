@@ -126,7 +126,81 @@
     <div id="post0" class="else">
         <p class="animated fadeInDown">
             
-                <a href="/categories/quill"><b>「 </b>QUILL<b> 」</b></a>
+                <a href="javascript:;" target="_blank" rel="noopener"><b>「 </b>Article<b> 」</b></a>
+            
+            November 27, 2019
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2019/11/27/docker%E9%83%A8%E7%BD%B2mysql/" title="docker部署mysql" class="posttitle">docker部署mysql</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        503
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        1 mins.
+                    </span>
+                
+                
+                    <span id="/2019/11/27/docker部署mysql/" class="leancloud_visitors" data-flag-title="">
+                        <b class="iconfont icon-read"></b> <i>Read count</i>
+                        <i class="leancloud-visitors-count">1000000</i>
+                    </span>
+                
+            </p>
+        
+        
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/mysql/" rel="tag">mysql</a></li></ul>
+        
+        <div class="md-content animated fadeIn">
+            
+                <p><strong>Docker部署mysql</strong></p>
+<ol>
+<li>下载镜像<pre><code class="typescript">docker pull mysql:5.7</code></pre>
+</li>
+<li>运行镜像，挂载数据卷<pre><code class="typescript">docker run -p 3306:3306 --name mysqldb -v $PWD/conf:/etc/mysql/conf.d -v $PWD/logs:/logs -v $PWD/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=a123456 -idt mysql:5.7</code></pre>
+</li>
+<li>默认的用户名密码<br>执行完第二步，数据库就算是已经创建好了。 默认的数据库用户名就是root，密码是a123456。 可以通过数据库的客户端来访问。</li>
+</ol>
+<blockquote>
+<p>注意：服务器的3306...</p></blockquote>
+            
+            <span class="read-more"><a href="/2019/11/27/docker%E9%83%A8%E7%BD%B2mysql/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
+    </div>
+    
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                  <span class="typed-text"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div id="primary">
+        
+<div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(http://domain.com/awesome.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="/categories/quill">
+                  <b>「 </b>QUILL<b> 」</b>
+                </a>
             
             November 20, 2019
         </p>
@@ -152,9 +226,9 @@
                     </span>
                 
             </p>
-        
-        
-            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/ngx-quill/" rel="tag">ngx-quill</a></li></ul>
+            
+                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/ngx-quill/" rel="tag">ngx-quill</a></li></ul>
+            
         
         <div class="md-content animated fadeIn">
             
@@ -188,38 +262,14 @@
 </tr>
 <tr>
 <td>v5</td>
-<td>&gt;= 1.6.0</td>
-<td></td>
-</tr>
-<tr>
-<td>v4</td>
-<td>&gt;= 1.6.0</td>
-<td></td>
-</tr>
-</tbody></table>
-<p><strong>global.scss</strong></p>
-<pre><code class="scss">@import ...</code></pre>
+<td>&gt...</td></tr></tbody></table>
             
             <span class="read-more"><a href="/2019/11/20/angular7-ionic4-ngx-quill%E9%85%8D%E7%BD%AE/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
         </div>
     </div>
-    
 </div>
 
-<div class="screen-gradient-after">
-    <div class="screen-gradient-content">
-        <div class="screen-gradient-content-inside">
-            <div class="bold-underline-links screen-gradient-sponsor">
-                <p>
-                  <span class="typed-text"></span>
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
 
-    <div id="primary">
-        
 <div class="post" id="post">
     <div class="post-cover animated fadeIn" style="
             background-image:
@@ -700,62 +750,6 @@ class MyApp extends StatelessWidget {
 <li>按下时都会有“水波动画”（又称“涟漪动画”，就是点击时按钮上会出现水波荡漾的动画）...</li></ul>
             
             <span class="read-more"><a href="/2019/11/18/Flutter%E5%9F%BA%E7%A1%803-%E6%8C%89%E9%92%AE%E7%BB%84%E4%BB%B6/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
-        </div>
-    </div>
-</div>
-
-
-<div class="post" id="post">
-    <div class="post-cover animated fadeIn" style="
-            background-image:
-            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
-            url(http://domain.com/awesome.jpg);">
-    </div>
-    <div class="else">
-        <p class="animated fadeInDown">
-            
-                <a href="/categories/Flutter">
-                  <b>「 </b>FLUTTER<b> 」</b>
-                </a>
-            
-            November 18, 2019
-        </p>
-        <h3 class="post-title animated fadeInDown"><a href="/2019/11/18/Flutter%E5%9F%BA%E7%A1%802-Text-%E7%BB%84%E4%BB%B6/" title="Flutter基础2.Text()组件" class="posttitle">Flutter基础2.Text()组件</a></h3>
-        
-            <p class="post-count animated fadeInDown">
-                
-                    <span>
-                        <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        985
-                    </span>
-                
-                
-                    <span>
-                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                        1 mins.
-                    </span>
-                
-                
-                    <span id="/2019/11/18/Flutter基础2-Text-组件/" class="leancloud_visitors" data-flag-title="">
-                        <b class="iconfont icon-read"></b> <i>Read count</i>
-                        <i class="leancloud-visitors-count">1000000</i>
-                    </span>
-                
-            </p>
-            
-                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Flutter/" rel="tag">Flutter</a></li></ul>
-            
-        
-        <div class="md-content animated fadeIn">
-            
-                <p><strong>title 文字内容</strong></p>
-<pre><code class="dart">Text(&quot;Hello world &quot;*6,  //字符串重复六次
-  textAlign: TextAlign.center,
-)；</code></pre>
-<p><strong>textAlign</strong><br>文本的对齐方式；可以选择左对齐、右对齐还是居中。注意，对齐的参考系是Text widget本身。本例中虽然是指定了居中对齐，但因为Text文本内容宽度不足一行，Text的宽度和文本内容长度相等，那么这时指定对齐方式是没有意义的，只有Text宽度大于文本内容长度时指定此属性才有意义。</p>
-<pre><code class="dart">TextAlign.left...</code></pre>
-            
-            <span class="read-more"><a href="/2019/11/18/Flutter%E5%9F%BA%E7%A1%802-Text-%E7%BB%84%E4%BB%B6/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
         </div>
     </div>
 </div>
