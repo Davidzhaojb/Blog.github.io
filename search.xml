@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>如何下载udemy上的视频</title>
+      <link href="/2019/12/04/%E5%A6%82%E4%BD%95%E4%B8%8B%E8%BD%BDudemy%E4%B8%8A%E7%9A%84%E8%A7%86%E9%A2%91/"/>
+      <url>/2019/12/04/%E5%A6%82%E4%BD%95%E4%B8%8B%E8%BD%BDudemy%E4%B8%8A%E7%9A%84%E8%A7%86%E9%A2%91/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://zhuanlan.zhihu.com/p/55134930" target="_blank" rel="noopener">参考地址：https://zhuanlan.zhihu.com/p/55134930</a></p><ol><li>手下用命令把源代码拉到本地<pre><code class="bash">git clone https://github.com/r0oth3x49/udemy-dl.git</code></pre></li><li>然后，进入udemy-dl文件夹，安装脚本的依赖文件：<pre><code class="bash">pip install -r requirements.txt</code></pre></li></ol><pre><code class="bash">python udemy-dl.py https://www.udemy.com/course/flutter-bootcamp-with-dart/learn/lecture -o /David/flutter -q 1080 --chapter-start 1—chapter-end 17</code></pre><blockquote><p>–chapter-start 1—chapter-end 17 中的1跟17为章节</p></blockquote>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> udemy </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>docker部署mysql</title>
       <link href="/2019/11/27/docker%E9%83%A8%E7%BD%B2mysql/"/>
       <url>/2019/11/27/docker%E9%83%A8%E7%BD%B2mysql/</url>
@@ -66,11 +85,11 @@
       
         <tags>
             
+            <tag> centos </tag>
+            
             <tag> docker </tag>
             
             <tag> mysql </tag>
-            
-            <tag> centos </tag>
             
         </tags>
       
