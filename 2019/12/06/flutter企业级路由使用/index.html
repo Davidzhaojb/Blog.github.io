@@ -5,15 +5,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Flutter基础6.ListView组件 - David Blog</title>
+    <title>flutter企业级路由使用 - David Blog</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Hexo Nodejs Web,"> 
-    <meta name="description" content="ListView列表组件body:ListView(
-    children:&amp;lt;widget&amp;gt;[
-        ListTile(
-            leading:Icon(,"> 
+    <meta name="description" content="flutter配置企业级路由
+在lib文件夹下新建routers文件夹
+
+新建router_handler.dart文件
+import &amp;#39;package:flutter/material.d,"> 
     <meta name="author" content="David"> 
     <link rel="alternative" href="atom.xml" title="David Blog" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -45,7 +46,7 @@
     <div class="navigation animated fadeIn fast delay-1s">
         <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="/">
         <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-        <h3 class="subtitle">Flutter基础6.ListView组件</h3>
+        <h3 class="subtitle">flutter企业级路由使用</h3>
         <div class="social">
             <!--        <div class="like-icon">-->
             <!--            <a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -77,25 +78,25 @@
                 
                     <a href="/categories/Flutter"><b>「 </b>FLUTTER<b> 」</b></a>
                 
-                November 18, 2019
+                December 06, 2019
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2019/11/18/Flutter%E5%9F%BA%E7%A1%806-ListView%E7%BB%84%E4%BB%B6/" title="Flutter基础6.ListView组件" class="">Flutter基础6.ListView组件</a></h3>
+            <h3 class="post-title animated fadeInDown"><a href="/2019/12/06/flutter%E4%BC%81%E4%B8%9A%E7%BA%A7%E8%B7%AF%E7%94%B1%E4%BD%BF%E7%94%A8/" title="flutter企业级路由使用" class="">flutter企业级路由使用</a></h3>
             
                 <p class="post-count animated fadeInDown">
                     
                         <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        731
+                        2.2k
                     </span>
                     
                     
                         <span>
                         <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                        1 mins.
+                        2 mins.
                     </span>
                     
                     
-                        <span id="/2019/11/18/Flutter基础6-ListView组件/" class="leancloud_visitors" data-flag-title="Flutter基础6.ListView组件">
+                        <span id="/2019/12/06/flutter企业级路由使用/" class="leancloud_visitors" data-flag-title="flutter企业级路由使用">
                             <b class="iconfont icon-read"></b> <i>Read count</i>
                             <i class="leancloud-visitors-count">1000000</i>
                         </span>
@@ -125,25 +126,69 @@
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn slower">
-            <h1 id="ListView列表组件"><a href="#ListView列表组件" class="headerlink" title="ListView列表组件"></a>ListView列表组件</h1><pre><code class="dart">body:ListView(
-    children:&lt;widget&gt;[
-        ListTile(
-            leading:Icon(Icons.access_time),
-            title:Text(&#39;access_time&#39;)
-        )
-    ]
-),</code></pre>
-<p>图片列表跟上面原理类似</p>
-<h1 id="横向列表／纵向列表"><a href="#横向列表／纵向列表" class="headerlink" title="横向列表／纵向列表"></a>横向列表／纵向列表</h1><pre><code class="dart">body:ListView(
-    scrollDirection: Axis.horizontal, // 水瓶列表
-    scrollDirection: Axis.vertical    // 纵向列表
-    children:&lt;widget&gt;[
-        ListTile(
-            leading:Icon(Icons.access_time),
-            title:Text(&#39;access_time&#39;)
-        )
-    ]
-),</code></pre>
+            <h3 id="flutter配置企业级路由"><a href="#flutter配置企业级路由" class="headerlink" title="flutter配置企业级路由"></a>flutter配置企业级路由</h3><ol>
+<li><p>在lib文件夹下新建routers文件夹</p>
+</li>
+<li><p>新建router_handler.dart文件</p>
+<pre><code class="dart">import &#39;package:flutter/material.dart&#39;;
+import &#39;package:fluro/fluro.dart&#39;;
+import &#39;../pages/details_page.dart&#39;;
+Handler detailshandler = Handler(
+handlerFunc: (BuildContext context,Map&lt;String,List&lt;String&gt;&gt; params){
+ String goodsId = params[&#39;id&#39;].first;
+ print(&#39;index&gt;details goodsid id ${goodsId}&#39;);
+ return DetailsPage(goodsId);
+}
+);
+// goodsId  为传递到详情页面的参数</code></pre>
+</li>
+<li><p>新建routes.dart文件</p>
+<pre><code class="dart">import &#39;package:flutter/material.dart&#39;;
+import &#39;package:fluro/fluro.dart&#39;;
+import &#39;./router_handler.dart&#39;;
+class Routes {
+static String root = &#39;/&#39;;   // 根目标
+static String detailsPage = &#39;/detail&#39;;
+static void configureRoutes(Router router){
+ router.notFoundHandler = new Handler(
+   handlerFunc:(BuildContext context,Map&lt;String,List&lt;String&gt;&gt; params){
+     print(&#39;ERROR ===&gt; router was not fund&#39;);
+   }
+ );
+
+ router.define(detailsPage,handler: detailshandler);  // 再有路由就复制这个
+}
+}</code></pre>
+</li>
+<li><p>新建application.dart文件</p>
+<pre><code class="dart">import &#39;package:fluro/fluro.dart&#39;;
+class Application {
+static Router router;
+}</code></pre>
+</li>
+<li><p>在main.dart 中导入</p>
+<pre><code class="dart">import &#39;./routers/routes.dart&#39;;
+import &#39;./routers/application.dart&#39;;
+// 下面的变量在build方法里面声明
+final router = Router();
+Routes.configureRoutes(router);
+Application.router = router;
+// 下面这个
+return Container(
+     child: BotToastInit(
+   child: MaterialApp(
+     title: &#39;百姓生活+&#39;,
+     onGenerateRoute: Application.router.generator,
+     navigatorObservers: [BotToastNavigatorObserver()], // 注册路由观察者
+     debugShowCheckedModeBanner: false, // 不显示右上角的debug
+     theme: ThemeData(primaryColor: Colors.pink),
+     home: IndexPage(),
+   ),
+ ));
+</code></pre>
+</li>
+</ol>
+<pre><code>6. 使用</code></pre><p>import ‘../routers/application.dart’;<br> onTap: () {<br>     Application.router.navigateTo(context,”/detail?id=${val[‘goodsId’]}”);<br>},<br>```</p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
@@ -179,7 +224,7 @@
                     <div class="box sticky animated fadeInRight faster">
                         <div id="toc" class="subbox">
                             <h4>Contents</h4>
-                            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ListView列表组件"><span class="toc-number">1.</span> <span class="toc-text">ListView列表组件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#横向列表／纵向列表"><span class="toc-number">2.</span> <span class="toc-text">横向列表／纵向列表</span></a></li></ol>
+                            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#flutter配置企业级路由"><span class="toc-number">1.</span> <span class="toc-text">flutter配置企业级路由</span></a></li></ol>
                         </div>
                     </div>
                 

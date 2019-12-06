@@ -4,6 +4,50 @@
   
     
     <entry>
+      <title>flutter企业级路由使用</title>
+      <link href="/2019/12/06/flutter%E4%BC%81%E4%B8%9A%E7%BA%A7%E8%B7%AF%E7%94%B1%E4%BD%BF%E7%94%A8/"/>
+      <url>/2019/12/06/flutter%E4%BC%81%E4%B8%9A%E7%BA%A7%E8%B7%AF%E7%94%B1%E4%BD%BF%E7%94%A8/</url>
+      
+        <content type="html"><![CDATA[<h3 id="flutter配置企业级路由"><a href="#flutter配置企业级路由" class="headerlink" title="flutter配置企业级路由"></a>flutter配置企业级路由</h3><ol><li><p>在lib文件夹下新建routers文件夹</p></li><li><p>新建router_handler.dart文件</p><pre><code class="dart">import &#39;package:flutter/material.dart&#39;;import &#39;package:fluro/fluro.dart&#39;;import &#39;../pages/details_page.dart&#39;;Handler detailshandler = Handler(handlerFunc: (BuildContext context,Map&lt;String,List&lt;String&gt;&gt; params){ String goodsId = params[&#39;id&#39;].first; print(&#39;index&gt;details goodsid id ${goodsId}&#39;); return DetailsPage(goodsId);});// goodsId  为传递到详情页面的参数</code></pre></li><li><p>新建routes.dart文件</p><pre><code class="dart">import &#39;package:flutter/material.dart&#39;;import &#39;package:fluro/fluro.dart&#39;;import &#39;./router_handler.dart&#39;;class Routes {static String root = &#39;/&#39;;   // 根目标static String detailsPage = &#39;/detail&#39;;static void configureRoutes(Router router){ router.notFoundHandler = new Handler(   handlerFunc:(BuildContext context,Map&lt;String,List&lt;String&gt;&gt; params){     print(&#39;ERROR ===&gt; router was not fund&#39;);   } ); router.define(detailsPage,handler: detailshandler);  // 再有路由就复制这个}}</code></pre></li><li><p>新建application.dart文件</p><pre><code class="dart">import &#39;package:fluro/fluro.dart&#39;;class Application {static Router router;}</code></pre></li><li><p>在main.dart 中导入</p><pre><code class="dart">import &#39;./routers/routes.dart&#39;;import &#39;./routers/application.dart&#39;;// 下面的变量在build方法里面声明final router = Router();Routes.configureRoutes(router);Application.router = router;// 下面这个return Container(     child: BotToastInit(   child: MaterialApp(     title: &#39;百姓生活+&#39;,     onGenerateRoute: Application.router.generator,     navigatorObservers: [BotToastNavigatorObserver()], // 注册路由观察者     debugShowCheckedModeBanner: false, // 不显示右上角的debug     theme: ThemeData(primaryColor: Colors.pink),     home: IndexPage(),   ), ));</code></pre></li></ol><pre><code>6. 使用</code></pre><p>import ‘../routers/application.dart’;<br> onTap: () {<br>     Application.router.navigateTo(context,”/detail?id=${val[‘goodsId’]}”);<br>},<br>```</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Flutter </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Flutter </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>flutter遇到的坑</title>
+      <link href="/2019/12/05/flutter%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91/"/>
+      <url>/2019/12/05/flutter%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91/</url>
+      
+        <content type="html"><![CDATA[<h3 id="清除残留的插件"><a href="#清除残留的插件" class="headerlink" title="清除残留的插件"></a>清除残留的插件</h3><ol><li>删除android，跟ios文件夹</li><li>重新生成这两个文件<pre><code>flutter create . </code></pre></li></ol>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> flutter </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>如何下载udemy上的视频</title>
       <link href="/2019/12/04/%E5%A6%82%E4%BD%95%E4%B8%8B%E8%BD%BDudemy%E4%B8%8A%E7%9A%84%E8%A7%86%E9%A2%91/"/>
       <url>/2019/12/04/%E5%A6%82%E4%BD%95%E4%B8%8B%E8%BD%BDudemy%E4%B8%8A%E7%9A%84%E8%A7%86%E9%A2%91/</url>
@@ -85,11 +129,11 @@
       
         <tags>
             
-            <tag> centos </tag>
-            
             <tag> docker </tag>
             
             <tag> mysql </tag>
+            
+            <tag> centos </tag>
             
         </tags>
       
