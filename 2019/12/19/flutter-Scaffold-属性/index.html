@@ -5,14 +5,28 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Flutter项目左上角收缩栏制作 - David Blog</title>
+    <title>flutter Scaffold 属性 - David Blog</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Hexo Nodejs Web,"> 
-    <meta name="description" content="制作左上角收缩栏index_page.dart
-import &amp;#39;package:flutter/material.dart&amp;#39;;
-import &amp;#39;../pages/drawer,"> 
+    <meta name="description" content="scaffold
+scaffold 作用
+
+
+
+
+类型
+作用特点
+
+
+
+MaterialApp
+一般作为APP顶层的主页入口，可配置主题，多语言，路由等
+
+
+Scaffold
+一般用户页面的承载Wi,"> 
     <meta name="author" content="David"> 
     <link rel="alternative" href="atom.xml" title="David Blog" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -44,7 +58,7 @@ import &amp;#39;../pages/drawer,">
     <div class="navigation animated fadeIn fast delay-1s">
         <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="/">
         <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-        <h3 class="subtitle">Flutter项目左上角收缩栏制作</h3>
+        <h3 class="subtitle">flutter Scaffold 属性</h3>
         <div class="social">
             <!--        <div class="like-icon">-->
             <!--            <a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -76,15 +90,15 @@ import &amp;#39;../pages/drawer,">
                 
                     <a href="/categories/Flutter"><b>「 </b>FLUTTER<b> 」</b></a>
                 
-                November 18, 2019
+                December 19, 2019
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2019/11/18/Flutter%E9%A1%B9%E7%9B%AE%E5%B7%A6%E4%B8%8A%E8%A7%92%E6%94%B6%E7%BC%A9%E6%A0%8F%E5%88%B6%E4%BD%9C/" title="Flutter项目左上角收缩栏制作" class="">Flutter项目左上角收缩栏制作</a></h3>
+            <h3 class="post-title animated fadeInDown"><a href="/2019/12/19/flutter-Scaffold-%E5%B1%9E%E6%80%A7/" title="flutter Scaffold 属性" class="">flutter Scaffold 属性</a></h3>
             
                 <p class="post-count animated fadeInDown">
                     
                         <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        1.9k
+                        2.5k
                     </span>
                     
                     
@@ -94,7 +108,7 @@ import &amp;#39;../pages/drawer,">
                     </span>
                     
                     
-                        <span id="/2019/11/18/Flutter项目左上角收缩栏制作/" class="leancloud_visitors" data-flag-title="Flutter项目左上角收缩栏制作">
+                        <span id="/2019/12/19/flutter-Scaffold-属性/" class="leancloud_visitors" data-flag-title="flutter Scaffold 属性">
                             <b class="iconfont icon-read"></b> <i>Read count</i>
                             <i class="leancloud-visitors-count">1000000</i>
                         </span>
@@ -124,70 +138,93 @@ import &amp;#39;../pages/drawer,">
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn slower">
-            <h1 id="制作左上角收缩栏"><a href="#制作左上角收缩栏" class="headerlink" title="制作左上角收缩栏"></a>制作左上角收缩栏</h1><p><strong>index_page.dart</strong></p>
-<pre><code class="dart">import &#39;package:flutter/material.dart&#39;;
-import &#39;../pages/drawer_page.dart&#39;;
-class Indexpage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text(&#39;Google Translate&#39;),
-        ),
-        body: Center(
-          child: Text(&#39;这是首页&#39;),
-        ),
-        drawer: DrawerPage(),
-      ),
-    );
-  }
-}</code></pre>
-<p><strong>drawer_page</strong></p>
-<pre><code class="dart">import &#39;package:flutter/material.dart&#39;;
-import &#39;package:flutter/cupertino.dart&#39;;
-
-class DrawerPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Drawer(
-        child: ListView(
-      children: &lt;Widget&gt;[
-        UserAccountsDrawerHeader(
-          accountName: Text(&#39;有道云笔记&#39;),  // 如果不需要就设置为null
-          accountEmail: Text(&#39;Test@qq.com&#39;),
-          currentAccountPicture: null,
-          decoration: BoxDecoration(
-              image: DecorationImage(
-            fit: BoxFit.cover,
-            image: NetworkImage(&#39;&#39;),
-          )),
-        ),
-        ListTile(
-          title: Text(&#39;首页&#39;),
-          leading: Icon(CupertinoIcons.home),
-          onTap: () {},
-        ),
-        ListTile(
-          title: Text(&#39;翻译收藏夹&#39;),
-          leading: Icon(CupertinoIcons.location_solid),
-          onTap: () {},
-        ),
-        ListTile(
-          title: Text(&#39;离线翻译&#39;),
-          leading: Icon(CupertinoIcons.music_note),
-          onTap: () {},
-        ),
-        ListTile(
-          title: Text(&#39;设置&#39;),
-          leading: Icon(CupertinoIcons.settings),
-          onTap: () {},
-        )
-      ],
-    ));
-  }
-}
-</code></pre>
+            <h3 id="scaffold"><a href="#scaffold" class="headerlink" title="scaffold"></a>scaffold</h3><ol>
+<li>scaffold 作用</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>作用特点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MaterialApp</td>
+<td>一般作为APP顶层的主页入口，可配置主题，多语言，路由等</td>
+</tr>
+<tr>
+<td>Scaffold</td>
+<td>一般用户页面的承载Widget，包含appbar、snackbar、drawer等material design的设定。</td>
+</tr>
+<tr>
+<td>Appbar</td>
+<td>一般用于Scaffold的appbar ，内有标题，二级页面返回按键等，当然不止这些，tabbar等也会需要它 。</td>
+</tr>
+<tr>
+<td>Text</td>
+<td>显示文本，几乎都会用到，主要是通过style设置TextStyle来设置字体样式等。</td>
+</tr>
+<tr>
+<td>RichText</td>
+<td>富文本，通过设置TextSpan，可以拼接出富文本场景。</td>
+</tr>
+<tr>
+<td>TextField</td>
+<td>文本输入框 ：new TextField(controller: //文本控制器, obscureText: “hint文本”);</td>
+</tr>
+<tr>
+<td>Image</td>
+<td>图片加载: new FadeInImage.assetNetwork( placeholder: “预览图”, fit: BoxFit.fitWidth, image: “url”);</td>
+</tr>
+<tr>
+<td>FlatButton</td>
+<td>按键点击: new FlatButton(onPressed: () {},child: new Container());</td>
+</tr>
+</tbody></table>
+<ol start="2">
+<li>常用属性<blockquote>
+<p>drawer 左上角抽屉</p>
+</blockquote>
+<pre><code class="dart">drawer: MyDrawer(), //抽屉</code></pre>
+</li>
+</ol>
+<blockquote>
+<p>floatingActionButton  悬浮按钮   </p>
+</blockquote>
+<pre><code class="dart">floatingActionButton: FloatingActionButton(
+        onPressed: () =&gt; setState(() =&gt; _count++),
+        tooltip: &#39;Increment Counter&#39;,
+        child: const Icon(Icons.add),
+      ),</code></pre>
+<blockquote>
+<p>floatingActionButtonLocation 悬浮按钮居中</p>
+</blockquote>
+<pre><code class="dart">floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,</code></pre>
+<blockquote>
+<p>backgroundColor 页面整体的背景色 backgroundColor: Colors.red,</p>
+</blockquote>
+<blockquote>
+<p>appbar 头部标题栏 Appbar</p>
+</blockquote>
+<blockquote>
+<p>body 页面内容</p>
+</blockquote>
+<blockquote>
+<p>bottomNavigationBar 底部导航</p>
+</blockquote>
+<pre><code class="dart">bottomNavigationBar: BottomNavigationBar( // 底部导航
+        items: &lt;BottomNavigationBarItem&gt;[
+          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text(&#39;Home&#39;)),
+          BottomNavigationBarItem(icon: Icon(Icons.business), title: Text(&#39;Business&#39;)),
+          BottomNavigationBarItem(icon: Icon(Icons.school), title: Text(&#39;School&#39;)),
+        ],
+        currentIndex: _selectedIndex,
+        fixedColor: Colors.blue,
+        onTap: _onItemTapped,
+      ),</code></pre>
+<blockquote>
+<p>如果给Scaffold添加了抽屉菜单，默认情况下Scaffold会自动将AppBar的leading设置为菜单按钮（如上面截图所示），点击它便可打开抽屉菜单</p>
+</blockquote>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
@@ -223,7 +260,7 @@ class DrawerPage extends StatelessWidget {
                     <div class="box sticky animated fadeInRight faster">
                         <div id="toc" class="subbox">
                             <h4>Contents</h4>
-                            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#制作左上角收缩栏"><span class="toc-number">1.</span> <span class="toc-text">制作左上角收缩栏</span></a></li></ol>
+                            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#scaffold"><span class="toc-number">1.</span> <span class="toc-text">scaffold</span></a></li></ol>
                         </div>
                     </div>
                 

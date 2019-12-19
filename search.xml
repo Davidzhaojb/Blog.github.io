@@ -4,6 +4,75 @@
   
     
     <entry>
+      <title>flutter TabBar 属性</title>
+      <link href="/2019/12/19/flutter-TabBar-%E5%B1%9E%E6%80%A7/"/>
+      <url>/2019/12/19/flutter-TabBar-%E5%B1%9E%E6%80%A7/</url>
+      
+        <content type="html"><![CDATA[<h1 id="TabBar"><a href="#TabBar" class="headerlink" title="TabBar"></a>TabBar</h1><ol><li>作用<blockquote><p>用于appbar的tab切换</p></blockquote></li></ol><pre><code class="dart">  return new Scaffold(        ///设置侧边滑出 drawer，不需要可以不设置        drawer: _drawer,        ///设置悬浮按键，不需要可以不设置        floatingActionButton: _floatingActionButton,        ///标题栏        appBar: new AppBar(          backgroundColor: _backgroundColor,          title: _title,          ///tabBar控件          bottom: new TabBar(            ///顶部时，tabBar为可以滑动的模式            isScrollable: true,            ///必须有的控制器，与pageView的控制器同步            controller: _tabController,            ///每一个tab item，是一个List&lt;Widget&gt;            tabs: _tabItems,            ///tab底部选中条颜色            indicatorColor: _indicatorColor,          ),        ),        ///页面主体，PageView，用于承载Tab对应的页面        body: new PageView(          ///必须有的控制器，与tabBar的控制器同步          controller: _pageController,          ///每一个 tab 对应的页面主体，是一个List&lt;Widget&gt;          children: _tabViews,          ///页面触摸作用滑动回调，用于同步tab选中状态          onPageChanged: (index) {            _tabController.animateTo(index);          },        ),      );</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Flutter </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>flutter AppBar 属性</title>
+      <link href="/2019/12/19/flutter-AppBar-%E5%B1%9E%E6%80%A7/"/>
+      <url>/2019/12/19/flutter-AppBar-%E5%B1%9E%E6%80%A7/</url>
+      
+        <content type="html"><![CDATA[<h1 id="AppBar"><a href="#AppBar" class="headerlink" title="AppBar"></a>AppBar</h1><ol><li><p>appbar 作用</p><blockquote><p>AppBar是一个Material风格的导航栏，通过它可以设置导航栏标题、导航栏菜单、导航栏底部的Tab标题等</p></blockquote></li><li><p>用法</p><pre><code class="dart">AppBar({Key key,this.leading, //导航栏最左侧Widget，常见为抽屉菜单按钮或返回按钮。this.automaticallyImplyLeading = true, //如果leading为null，是否自动实现默认的leading按钮this.title,// 页面标题this.actions, // 导航栏右侧菜单this.bottom, // 导航栏底部菜单，通常为Tab按钮组this.elevation = 4.0, // 导航栏阴影this.centerTitle, //标题是否居中 this.backgroundColor,...   //其它属性见源码注释})</code></pre></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Flutter </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Flutter </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>flutter Scaffold 属性</title>
+      <link href="/2019/12/19/flutter-Scaffold-%E5%B1%9E%E6%80%A7/"/>
+      <url>/2019/12/19/flutter-Scaffold-%E5%B1%9E%E6%80%A7/</url>
+      
+        <content type="html"><![CDATA[<h3 id="scaffold"><a href="#scaffold" class="headerlink" title="scaffold"></a>scaffold</h3><ol><li>scaffold 作用</li></ol><table><thead><tr><th>类型</th><th>作用特点</th></tr></thead><tbody><tr><td>MaterialApp</td><td>一般作为APP顶层的主页入口，可配置主题，多语言，路由等</td></tr><tr><td>Scaffold</td><td>一般用户页面的承载Widget，包含appbar、snackbar、drawer等material design的设定。</td></tr><tr><td>Appbar</td><td>一般用于Scaffold的appbar ，内有标题，二级页面返回按键等，当然不止这些，tabbar等也会需要它 。</td></tr><tr><td>Text</td><td>显示文本，几乎都会用到，主要是通过style设置TextStyle来设置字体样式等。</td></tr><tr><td>RichText</td><td>富文本，通过设置TextSpan，可以拼接出富文本场景。</td></tr><tr><td>TextField</td><td>文本输入框 ：new TextField(controller: //文本控制器, obscureText: “hint文本”);</td></tr><tr><td>Image</td><td>图片加载: new FadeInImage.assetNetwork( placeholder: “预览图”, fit: BoxFit.fitWidth, image: “url”);</td></tr><tr><td>FlatButton</td><td>按键点击: new FlatButton(onPressed: () {},child: new Container());</td></tr></tbody></table><ol start="2"><li>常用属性<blockquote><p>drawer 左上角抽屉</p></blockquote><pre><code class="dart">drawer: MyDrawer(), //抽屉</code></pre></li></ol><blockquote><p>floatingActionButton  悬浮按钮   </p></blockquote><pre><code class="dart">floatingActionButton: FloatingActionButton(        onPressed: () =&gt; setState(() =&gt; _count++),        tooltip: &#39;Increment Counter&#39;,        child: const Icon(Icons.add),      ),</code></pre><blockquote><p>floatingActionButtonLocation 悬浮按钮居中</p></blockquote><pre><code class="dart">floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,</code></pre><blockquote><p>backgroundColor 页面整体的背景色 backgroundColor: Colors.red,</p></blockquote><blockquote><p>appbar 头部标题栏 Appbar</p></blockquote><blockquote><p>body 页面内容</p></blockquote><blockquote><p>bottomNavigationBar 底部导航</p></blockquote><pre><code class="dart">bottomNavigationBar: BottomNavigationBar( // 底部导航        items: &lt;BottomNavigationBarItem&gt;[          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text(&#39;Home&#39;)),          BottomNavigationBarItem(icon: Icon(Icons.business), title: Text(&#39;Business&#39;)),          BottomNavigationBarItem(icon: Icon(Icons.school), title: Text(&#39;School&#39;)),        ],        currentIndex: _selectedIndex,        fixedColor: Colors.blue,        onTap: _onItemTapped,      ),</code></pre><blockquote><p>如果给Scaffold添加了抽屉菜单，默认情况下Scaffold会自动将AppBar的leading设置为菜单按钮（如上面截图所示），点击它便可打开抽屉菜单</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> Flutter </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Flutter </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>flutter企业级路由使用</title>
       <link href="/2019/12/06/flutter%E4%BC%81%E4%B8%9A%E7%BA%A7%E8%B7%AF%E7%94%B1%E4%BD%BF%E7%94%A8/"/>
       <url>/2019/12/06/flutter%E4%BC%81%E4%B8%9A%E7%BA%A7%E8%B7%AF%E7%94%B1%E4%BD%BF%E7%94%A8/</url>
@@ -129,11 +198,11 @@
       
         <tags>
             
+            <tag> centos </tag>
+            
             <tag> docker </tag>
             
             <tag> mysql </tag>
-            
-            <tag> centos </tag>
             
         </tags>
       

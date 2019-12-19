@@ -5,14 +5,20 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Flutter项目左上角收缩栏制作 - David Blog</title>
+    <title>flutter TabBar 属性 - David Blog</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Hexo Nodejs Web,"> 
-    <meta name="description" content="制作左上角收缩栏index_page.dart
-import &amp;#39;package:flutter/material.dart&amp;#39;;
-import &amp;#39;../pages/drawer,"> 
+    <meta name="description" content="TabBar
+作用
+用于appbar的tab切换
+
+
+
+  return new Scaffold(
+        ///设置侧边滑出 drawer，不需要可以不设置
+        drawer,"> 
     <meta name="author" content="David"> 
     <link rel="alternative" href="atom.xml" title="David Blog" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -44,7 +50,7 @@ import &amp;#39;../pages/drawer,">
     <div class="navigation animated fadeIn fast delay-1s">
         <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="/">
         <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-        <h3 class="subtitle">Flutter项目左上角收缩栏制作</h3>
+        <h3 class="subtitle">flutter TabBar 属性</h3>
         <div class="social">
             <!--        <div class="like-icon">-->
             <!--            <a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -69,32 +75,32 @@ import &amp;#39;../pages/drawer,">
             animation-duration: 1.2s;
             background-image: 
                 radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
-                url(http://domain.com/awesome.jpg);">
+                url(/img/cover.jpg);">
         </div>
         <div class="else">
             <p class="animated fadeInDown">
                 
-                    <a href="/categories/Flutter"><b>「 </b>FLUTTER<b> 」</b></a>
+                    <a href="javascript:;" target="_blank" rel="noopener"><b>「 </b>Article<b> 」</b></a>
                 
-                November 18, 2019
+                December 19, 2019
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2019/11/18/Flutter%E9%A1%B9%E7%9B%AE%E5%B7%A6%E4%B8%8A%E8%A7%92%E6%94%B6%E7%BC%A9%E6%A0%8F%E5%88%B6%E4%BD%9C/" title="Flutter项目左上角收缩栏制作" class="">Flutter项目左上角收缩栏制作</a></h3>
+            <h3 class="post-title animated fadeInDown"><a href="/2019/12/19/flutter-TabBar-%E5%B1%9E%E6%80%A7/" title="flutter TabBar 属性" class="">flutter TabBar 属性</a></h3>
             
                 <p class="post-count animated fadeInDown">
                     
                         <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        1.9k
+                        1.2k
                     </span>
                     
                     
                         <span>
                         <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                        2 mins.
+                        1 mins.
                     </span>
                     
                     
-                        <span id="/2019/11/18/Flutter项目左上角收缩栏制作/" class="leancloud_visitors" data-flag-title="Flutter项目左上角收缩栏制作">
+                        <span id="/2019/12/19/flutter-TabBar-属性/" class="leancloud_visitors" data-flag-title="flutter TabBar 属性">
                             <b class="iconfont icon-read"></b> <i>Read count</i>
                             <i class="leancloud-visitors-count">1000000</i>
                         </span>
@@ -124,75 +130,58 @@ import &amp;#39;../pages/drawer,">
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn slower">
-            <h1 id="制作左上角收缩栏"><a href="#制作左上角收缩栏" class="headerlink" title="制作左上角收缩栏"></a>制作左上角收缩栏</h1><p><strong>index_page.dart</strong></p>
-<pre><code class="dart">import &#39;package:flutter/material.dart&#39;;
-import &#39;../pages/drawer_page.dart&#39;;
-class Indexpage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text(&#39;Google Translate&#39;),
+            <h1 id="TabBar"><a href="#TabBar" class="headerlink" title="TabBar"></a>TabBar</h1><ol>
+<li>作用<blockquote>
+<p>用于appbar的tab切换</p>
+</blockquote>
+</li>
+</ol>
+<pre><code class="dart">  return new Scaffold(
+        ///设置侧边滑出 drawer，不需要可以不设置
+        drawer: _drawer,
+        ///设置悬浮按键，不需要可以不设置
+        floatingActionButton: _floatingActionButton,
+        ///标题栏
+        appBar: new AppBar(
+          backgroundColor: _backgroundColor,
+          title: _title,
+          ///tabBar控件
+          bottom: new TabBar(
+            ///顶部时，tabBar为可以滑动的模式
+            isScrollable: true,
+            ///必须有的控制器，与pageView的控制器同步
+            controller: _tabController,
+            ///每一个tab item，是一个List&lt;Widget&gt;
+            tabs: _tabItems,
+            ///tab底部选中条颜色
+            indicatorColor: _indicatorColor,
+          ),
         ),
-        body: Center(
-          child: Text(&#39;这是首页&#39;),
+        ///页面主体，PageView，用于承载Tab对应的页面
+        body: new PageView(
+          ///必须有的控制器，与tabBar的控制器同步
+          controller: _pageController,
+          ///每一个 tab 对应的页面主体，是一个List&lt;Widget&gt;
+          children: _tabViews,
+          ///页面触摸作用滑动回调，用于同步tab选中状态
+          onPageChanged: (index) {
+            _tabController.animateTo(index);
+          },
         ),
-        drawer: DrawerPage(),
-      ),
-    );
-  }
-}</code></pre>
-<p><strong>drawer_page</strong></p>
-<pre><code class="dart">import &#39;package:flutter/material.dart&#39;;
-import &#39;package:flutter/cupertino.dart&#39;;
-
-class DrawerPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Drawer(
-        child: ListView(
-      children: &lt;Widget&gt;[
-        UserAccountsDrawerHeader(
-          accountName: Text(&#39;有道云笔记&#39;),  // 如果不需要就设置为null
-          accountEmail: Text(&#39;Test@qq.com&#39;),
-          currentAccountPicture: null,
-          decoration: BoxDecoration(
-              image: DecorationImage(
-            fit: BoxFit.cover,
-            image: NetworkImage(&#39;&#39;),
-          )),
-        ),
-        ListTile(
-          title: Text(&#39;首页&#39;),
-          leading: Icon(CupertinoIcons.home),
-          onTap: () {},
-        ),
-        ListTile(
-          title: Text(&#39;翻译收藏夹&#39;),
-          leading: Icon(CupertinoIcons.location_solid),
-          onTap: () {},
-        ),
-        ListTile(
-          title: Text(&#39;离线翻译&#39;),
-          leading: Icon(CupertinoIcons.music_note),
-          onTap: () {},
-        ),
-        ListTile(
-          title: Text(&#39;设置&#39;),
-          leading: Icon(CupertinoIcons.settings),
-          onTap: () {},
-        )
-      ],
-    ));
-  }
-}
-</code></pre>
+      );</code></pre>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
-                <source type="audio/mpeg" src="http://domain.com/awesome.mp3">
+                <source type="audio/mpeg" src="">
             </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='/statics/chengdu.mp3'></li>
+                        
+                    
+                </ul>
             
             
             
@@ -223,7 +212,7 @@ class DrawerPage extends StatelessWidget {
                     <div class="box sticky animated fadeInRight faster">
                         <div id="toc" class="subbox">
                             <h4>Contents</h4>
-                            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#制作左上角收缩栏"><span class="toc-number">1.</span> <span class="toc-text">制作左上角收缩栏</span></a></li></ol>
+                            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#TabBar"><span class="toc-number">1.</span> <span class="toc-text">TabBar</span></a></li></ol>
                         </div>
                     </div>
                 
